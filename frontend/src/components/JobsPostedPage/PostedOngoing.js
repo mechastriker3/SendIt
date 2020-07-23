@@ -87,30 +87,34 @@ const expandRow = {
     renderer: row => (
       <div>
         <Row>
-          <Col md="8" style={{textAlign:'left'}}>
-            <Card text="black" bg="light" border="light" >
-              <Card.Body>
-                <Card.Title>Job details:</Card.Title>
-                  <Card.Text>{ `Pick Up Address: ${row.pickUpAddress.street} ${row.pickUpAddress.unitNo}, Singapore ${row.pickUpAddress.postalNo}` }</Card.Text>
-                  <Card.Text>{ `Destination Address: ${row.destinationAddress.street} ${row.destinationAddress.unitNo}, Singapore ${row.destinationAddress.postalNo}` }</Card.Text>
-                  <Card.Text>{ `Comments: ${row.comments}` }</Card.Text>
-              </Card.Body>
-            </Card>
+          <Col md="9">
+            <Row>
+              <Col style={{textAlign:'left'}}>
+                <Card text="black" bg="light" border="light" >
+                  <Card.Body>
+                    <Card.Title>Job details:</Card.Title>
+                      <Card.Text>{ `Pick Up Address: ${row.pickUpAddress.street} ${row.pickUpAddress.unitNo}, Singapore ${row.pickUpAddress.postalNo}` }</Card.Text>
+                      <Card.Text>{ `Destination Address: ${row.destinationAddress.street} ${row.destinationAddress.unitNo}, Singapore ${row.destinationAddress.postalNo}` }</Card.Text>
+                      <Card.Text>{ `Comments: ${row.comments}` }</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+            <br></br>
+            <Row>
+              <Col md="3" style={{textAlign:'left'}}>
+                <Card text="white" bg="info" border="info" style={{ width: '14rem' }} >
+                  <Card.Body>
+                    <Card.Title>Deliverer's Details:</Card.Title>
+                    <Card.Text>{ `Name: ${row.delivererName}`}</Card.Text>
+                    <Card.Text>{ `Contact:  ${row.delivererContactNo}`}</Card.Text>
+                  </Card.Body>
+                </Card>     
+              </Col>
+            </Row>
           </Col>
           <Col style={{textAlign:'right'}}>
             <ViewFeedbackDelivererLink userid={row.delivererID}/>
-          </Col>
-        </Row>
-        <br></br>
-        <Row>
-          <Col md="3" style={{textAlign:'left'}}>
-            <Card text="white" bg="info" border="info" style={{ width: '14rem' }} >
-              <Card.Body>
-                <Card.Title>Deliverer's Details:</Card.Title>
-                <Card.Text>{ `Name: ${row.delivererName}`}</Card.Text>
-                <Card.Text>{ `Contact:  ${row.delivererContactNo}`}</Card.Text>
-              </Card.Body>
-            </Card>     
           </Col>
         </Row>
       </div>

@@ -72,42 +72,47 @@ const expandRow = {
     renderer: row => (
       <div>
         <Row>
-          <Col md="8" style={{textAlign:'left'}}>
-            <Card text="black" bg="light" border="light" >
-              <Card.Body>
-                <Card.Title>Job details:</Card.Title>
-                  <Card.Text>{ `Pick Up Address: ${row.pickUpAddress.street} ${row.pickUpAddress.unitNo}, Singapore ${row.pickUpAddress.postalNo}` }</Card.Text>
-                  <Card.Text>{ `Destination Address: ${row.destinationAddress.street} ${row.destinationAddress.unitNo}, Singapore ${row.destinationAddress.postalNo}` }</Card.Text>
-                  <Card.Text>{ `Comments: ${row.comments}` }</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-
-          <Col style={{textAlign:'right'}}>
-            {row.delivererFeedback === null ? <LeaveFeedback jobid={row._id.$oid}/> : <p>Feedback Left</p>}
-            <ViewFeedbackSenderLink userid={row.senderID}/>
-          </Col>
-        </Row>
-        <br></br>
-        <Row>
-        <Col md="3" style={{textAlign:'left'}}>
-            <Card text="white" bg="info" border="info" style={{ width: '14rem' }}>
-              <Card.Body>
-                <Card.Title>Sender's Details:</Card.Title>
-                  <Card.Text>{ `Name: ${row.senderFirstName} ${''} ${row.senderLastName}`}</Card.Text>
-                  <Card.Text>{ `Contact:  ${row.senderContact}`}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md="3" style={{textAlign:'left'}}>
-            <Card text="white" bg="info" border="info" style={{ width: '14rem' }}>
-              <Card.Body>
-                <Card.Title>Recipient's Details:</Card.Title>
-                <Card.Text>{ `Name: ${row.recipientFirstName} ${''} ${row.recipientLastName}`}</Card.Text>
-                <Card.Text>{ `Contact:  ${row.recipientContact}`}</Card.Text>
-              </Card.Body>
-            </Card>      
-          </Col>
+          <Col md="9">
+            <Row>
+              <Col style={{textAlign:'left'}}>
+                <Card text="black" bg="light" border="light" >
+                  <Card.Body>
+                    <Card.Title>Job details:</Card.Title>
+                      <Card.Text>{ `Pick Up Address: ${row.pickUpAddress.street} ${row.pickUpAddress.unitNo}, Singapore ${row.pickUpAddress.postalNo}` }</Card.Text>
+                      <Card.Text>{ `Destination Address: ${row.destinationAddress.street} ${row.destinationAddress.unitNo}, Singapore ${row.destinationAddress.postalNo}` }</Card.Text>
+                      <Card.Text>{ `Comments: ${row.comments}` }</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+            <br></br>
+            <Row>
+                <Col md="3" style={{textAlign:'left'}}>
+                <Card text="white" bg="info" border="info" style={{ width: '14rem' }}>
+                  <Card.Body>
+                    <Card.Title>Sender's Details:</Card.Title>
+                      <Card.Text>{ `Name: ${row.senderFirstName} ${''} ${row.senderLastName}`}</Card.Text>
+                      <Card.Text>{ `Contact:  ${row.senderContact}`}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col md="1"></Col>
+              <Col md="3" style={{textAlign:'left'}}>
+                <Card text="white" bg="info" border="info" style={{ width: '14rem' }}>
+                  <Card.Body>
+                    <Card.Title>Recipient's Details:</Card.Title>
+                    <Card.Text>{ `Name: ${row.recipientFirstName} ${''} ${row.recipientLastName}`}</Card.Text>
+                    <Card.Text>{ `Contact:  ${row.recipientContact}`}</Card.Text>
+                  </Card.Body>
+                </Card>      
+              </Col>
+            </Row>
+            </Col>
+            <Col style={{textAlign:'right'}}>
+              {row.delivererFeedback === null ? <LeaveFeedback jobid={row._id.$oid}/> : <p>Feedback Left</p>}
+              <ViewFeedbackSenderLink userid={row.senderID}/>
+            </Col>
+        
         </Row>
       </div>
     )
@@ -162,7 +167,7 @@ const AcceptedHistory = () => {
     return (
       <div>
         <BootstrapTable
-            keyField='_id'
+            keyField='_id.$oid'
             data={ jobs }
             columns={ columns }
             expandRow={ expandRow }

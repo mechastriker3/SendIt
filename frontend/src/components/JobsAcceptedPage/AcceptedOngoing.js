@@ -133,27 +133,6 @@ const expandRow = {
           <ViewFeedbackSenderLink userid={row.senderID}/>
         </Col>
         </Row>
-        {/* <br></br>
-        <Row>
-          <Col md="3" style={{textAlign:'left'}}>
-            <Card text="white" bg="info" border="info" style={{ width: '14rem' }}>
-              <Card.Body>
-                <Card.Title>Sender's Details:</Card.Title>
-                  <Card.Text>{ `Name: ${row.senderFirstName} ${''} ${row.senderLastName}`}</Card.Text>
-                  <Card.Text>{ `Contact:  ${row.senderContact}`}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md="3" style={{textAlign:'left'}}>
-            <Card text="white" bg="info" border="info" style={{ width: '14rem' }}>
-              <Card.Body>
-                <Card.Title>Recipient's Details:</Card.Title>
-                <Card.Text>{ `Name: ${row.recipientFirstName} ${''} ${row.recipientLastName}`}</Card.Text>
-                <Card.Text>{ `Contact:  ${row.recipientContact}`}</Card.Text>
-              </Card.Body>
-            </Card>      
-          </Col>
-        </Row> */}
       </div>
     )
 };
@@ -200,7 +179,7 @@ const AcceptedOngoing = () => {
         return (
           <div>
             <BootstrapTable
-                keyField='_id'
+                keyField='_id.$oid'
                 data={ jobs }
                 columns={ columns }
                 expandRow={ expandRow }

@@ -13,8 +13,8 @@ const JobsPosted = () => {
             </Breadcrumb>
             <br></br>
             <h2>Your Jobs Posted</h2>
-
-            <br></br>
+            <p>If you are on mobile you may need to scroll left and right to view the entire table.</p>
+            <hr/>
             <Tabs defaultActiveKey="pendingJobs" id="uncontrolled-tab-jobsposted">
                 <Tab eventKey="pendingJobs" title="Pending Jobs">
                     <div style={{paddingTop:'10px', paddingBottom:'10px' }}>

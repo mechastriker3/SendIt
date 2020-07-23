@@ -81,7 +81,7 @@ const expandRow = {
               </Card.Body>
             </Card>
           </Col>
-          <Col style={{textAlign:'right'}}>
+          <Col style={{textAlign:'right',paddingTop:'20px'}}>
             <AcceptCancelJob
             sender={row.senderID}
             jobid={row._id.$oid}

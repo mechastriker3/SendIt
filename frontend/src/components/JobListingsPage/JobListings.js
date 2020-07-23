@@ -11,6 +11,7 @@ const JobListings = () => {
             </Breadcrumb>
             <br></br>
             <h2>Job Listings</h2>
+            <p>If you are on mobile you may need to scroll left and right to view the entire table.</p>
             <div className="container">
                 <JobTable/>
             </div>

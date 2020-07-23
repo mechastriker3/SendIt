@@ -18,30 +18,9 @@ const AcceptCancelJob = ({sender, jobid}) => {
 
     const schema = yup.object({
         delivererName: yup.string().required('Required'),
-        delivererContactNo: yup.string().matches(/^[0-9]{8}$/, 'Must be 8 digits').required('Required')
+        delivererContactNo: yup.string().matches(/^[6,8-9][0-9]{7}$/, 'Invalid number, make sure it is 8 digits').required('Required')
     })
-    // function AcceptJob() {
-    //     const deliveryJobId = currentjobid
-    //     const { apiOrigin = `http://localhost:5000/api/one-job/update-status-id/${deliveryJobId}/accepted` } = config;
-    
-    //     async function callApi() {
-    //         const token = await getTokenSilently();
-    //         console.log(token)
-    //         await axios.put(`${apiOrigin}`,{}, {
-    //             headers: {
-    //               Authorization: `Bearer ${token}`
-    //             }
-    //         })
-    //         .then(response => {
-    //             console.log(response.data)
-    //         })
-    //         .catch(error => {
-    //             console.log(error)
-    //         });
-    //     }
-    //     callApi();  
-    //     return refreshPage();
-    // }
+  
 
     function AcceptJob() {
         const deliveryJobId = currentjobid
