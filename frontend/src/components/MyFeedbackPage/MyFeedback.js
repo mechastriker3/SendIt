@@ -45,7 +45,7 @@ function FeedbackBySender() {
             <p>Average rating:  {senderAvgRating === null ? '-' : Math.round(senderAvgRating * 10)/10 }/5</p>
             <CardColumns>
                 {jobs.filter(filterNoFeedbackSender).map(job => (
-                    <Card style={{ width: '18rem' }}>
+                    <Card style={{ width: '18rem' }} key={job._id.$oid}>
                         <Card.Body>
                             <Card.Header as="h5">From: {job.senderFirstName} {job.senderLastName} </Card.Header>
                             <Card.Title>Rating: {job.senderRating}/5</Card.Title>

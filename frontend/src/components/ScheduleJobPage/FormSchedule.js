@@ -8,14 +8,14 @@ import { useAuth0 } from "../../react-auth0-spa"
 const schema = yup.object({
     senderFirstName: yup.string().required('Required'),
     senderLastName: yup.string().required('Required'),
-    senderContact: yup.string().matches(/^[0-9]{8}$/, 'Invalid number, must be 8 digits').required('Required'),
+    senderContact: yup.string().matches(/^[6,8-9][0-9]{7}$/, 'Invalid number, must be 8 digits').required('Required'),
     pickUpAddress: yup.string().required('Required'),
     pickUpUnitNumber: yup.string().required('Required'),
     pickUpPostal: yup.string().matches(/^[0-9]{6}$/, 'Invalid postal code, must be 6 digits').required('Required'),
 
     recipientFirstName: yup.string().required('Required'),
     recipientLastName: yup.string().required('Required'),
-    recipientContact: yup.string().matches(/^[0-9]{8}$/, 'Invalid number, must be 8 digits').required('Required'),
+    recipientContact: yup.string().matches(/^[6,8-9][0-9]{7}$/, 'Invalid number, must be 8 digits').required('Required'),
     destinationAddress: yup.string().required('Required'),
     destinationUnitNumber: yup.string().required('Required'),
     destinationPostal: yup.string().matches(/^[0-9]{6}$/, 'Invalid postal code, must be 6 digits').required('Required'),
