@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react"
 import BootstrapTable from 'react-bootstrap-table-next'
 import filterFactory, { textFilter, selectFilter } from 'react-bootstrap-table2-filter'
 import paginationFactory from 'react-bootstrap-table2-paginator'
-import { Button, Row, Col } from 'react-bootstrap'
+import { Button, Row, Col, Card } from 'react-bootstrap'
 import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css'
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css'
 import axios from 'axios'
 import { useAuth0 } from "../../react-auth0-spa"
 import config from "../../auth_config.json"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+import ViewFeedbackDelivererLink from "../ViewFeedbackUserPage/ViewFeedbackDelivererLink"
 
 
 const { apiOrigin = "http://localhost:5000/api/jobs/completed?by=requested" } = config;
@@ -66,28 +67,39 @@ const columns = [{
           sizeFilter = filter;
         }
     })
-  }, {
-    dataField: 'status',
-    text: 'Status'
   }]
 
 const expandRow = {
     renderer: row => (
       <div>
         <Row>
-        <Col md="8" style={{textAlign:'left'}}>
-          <p>{ `Pick Up Address: ${row.pickUpAddress.street} ${row.pickUpAddress.unitNo}, Singapore ${row.pickUpAddress.postalNo}` }</p>
-          <p>{ `Destination Address: ${row.destinationAddress.street} ${row.destinationAddress.unitNo}, Singapore ${row.destinationAddress.postalNo}` }</p>
-          <p>{ `Comments: ${row.comments}` }</p>
-          <br></br>
-          <p>Deliverer's Details:</p>
-          <p>{ `Name: ${row.delivererName}`}</p>
-          <p>{ `Contact:  ${row.delivererContactNo}`}</p>
-        </Col>
-        <Col style={{textAlign:'right'}}>
+          <Col md="8" style={{textAlign:'left'}}>
+            <Card text="black" bg="light" border="light" >
+              <Card.Body>
+                <Card.Title>Job details:</Card.Title>
+                  <Card.Text>{ `Pick Up Address: ${row.pickUpAddress.street} ${row.pickUpAddress.unitNo}, Singapore ${row.pickUpAddress.postalNo}` }</Card.Text>
+                  <Card.Text>{ `Destination Address: ${row.destinationAddress.street} ${row.destinationAddress.unitNo}, Singapore ${row.destinationAddress.postalNo}` }</Card.Text>
+                  <Card.Text>{ `Comments: ${row.comments}` }</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col style={{textAlign:'right'}}>
           {row.senderFeedback === null ? <LeaveFeedback jobid={row._id.$oid}/> : <p>Feedback left</p>}
-        </Col>
-      </Row>
+          <ViewFeedbackDelivererLink userid={row.delivererID}/>
+          </Col>
+        </Row>
+        <br></br>
+        <Row>
+          <Col md="3" style={{textAlign:'left'}}>
+            <Card text="white" bg="info" border="info" style={{ width: '14rem' }} >
+              <Card.Body>
+                <Card.Title>Deliverer's Details:</Card.Title>
+                <Card.Text>{ `Name: ${row.delivererName}`}</Card.Text>
+                <Card.Text>{ `Contact:  ${row.delivererContactNo}`}</Card.Text>
+              </Card.Body>
+            </Card>     
+          </Col>
+        </Row>
       </div>
     )
 };

@@ -4,15 +4,20 @@ import JobTable from './JobTable'
 
 const JobListings = () => {
     return (
-        <div className="container">
+        <div className="container" style={{paddingTop: '10px', paddingBottom: '10px'}}>
             <Breadcrumb>
                 <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                 <Breadcrumb.Item active>Job Listings</Breadcrumb.Item>
             </Breadcrumb>
-            <h1>These are the jobs</h1>
+            <br></br>
+            <h2>Job Listings</h2>
             <div className="container">
                 <JobTable/>
             </div>
+            <footer className="container" style={{paddingTop:'200px'}}>
+                <p>Team SendIt</p>
+                <p className="text-muted">Orbital 2020 by Joshua and Xing Peng</p>
+            </footer>
         </div>
     )   
 }

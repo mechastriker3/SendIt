@@ -12,7 +12,7 @@ class LandingPage extends React.Component {
                     <p>
                     Your number one solution for parcel delivery.
                     </p>
-                    <Button variant="outline-dark">Learn more</Button>
+                    <Button href="/about" variant="outline-dark">Learn more</Button>
                 </Container>
             </Jumbotron>
 

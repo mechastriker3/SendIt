@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useAuth0 } from '../../react-auth0-spa'
 import config from '../../auth_config.json'
-import { Button, Card, CardDeck, Breadcrumb } from 'react-bootstrap'
+import { Card, CardColumns, Breadcrumb } from 'react-bootstrap'
 
 
 
@@ -42,8 +42,8 @@ function FeedbackBySender() {
 
     return(
         <div>
-            <p>Average rating:  {senderAvgRating}/5</p>
-            <CardDeck>
+            <p>Average rating:  {senderAvgRating === null ? '-' : Math.round(senderAvgRating * 10)/10 }/5</p>
+            <CardColumns>
                 {jobs.filter(filterNoFeedbackSender).map(job => (
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
@@ -54,12 +54,10 @@ function FeedbackBySender() {
                                 <br></br>
                                 {job.senderFeedback}
                             </Card.Text>
-                            
-                            <Button variant="primary" href="/jobsposted">View Jobs Posted</Button>
                         </Card.Body>
                     </Card>
                 ))}
-            </CardDeck>
+            </CardColumns>
         </div>
     )
 }
@@ -107,8 +105,8 @@ function FeedbackByDeliverer() {
 
     return(
         <div>
-            <p>Average rating:  {delivererAvgRating}/5</p>
-            <CardDeck>
+            <p>Average rating:  {delivererAvgRating === null ? '-' : Math.round(delivererAvgRating *10)/10}/5</p>
+            <CardColumns>
                 {jobs.filter(filterNoFeedbackDeliver).map(job => (
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
@@ -122,7 +120,7 @@ function FeedbackByDeliverer() {
                         </Card.Body>
                     </Card>
                 ))}
-            </CardDeck>
+            </CardColumns>
         </div>
     )
 }
@@ -135,7 +133,7 @@ function MyFeedback() {
                 <Breadcrumb.Item href="/profile">Profile</Breadcrumb.Item>
                 <Breadcrumb.Item active>View Feedback</Breadcrumb.Item>
             </Breadcrumb>
-            <h1>PAST JOBS FEEDBACKS</h1>
+            <h2>Past Jobs Feedback</h2>
             <hr></hr>
             <div>
                 <strong>Feedback by Senders</strong>
@@ -146,6 +144,10 @@ function MyFeedback() {
                 <strong>Feedback by Deliverers</strong>
                 <FeedbackByDeliverer/>
             </div>
+            <footer className="container" style={{paddingTop:'200px'}}>
+                <p>Team SendIt</p>
+                <p className="text-muted">Orbital 2020 by Joshua and Xing Peng</p>
+            </footer>
         </div>
         
     )

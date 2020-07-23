@@ -17,6 +17,7 @@ import MyFeedback from './components/MyFeedbackPage/MyFeedback'
 import ViewFeedbackUser from './components/ViewFeedbackUserPage/ViewFeedbackUser'
 import SubmitFeedbackSender from './components/SubmitFeedbackPage/SubmitFeedbackSender'
 import SubmitFeedbackDel from './components/SubmitFeedbackPage/SubmitFeedbackDel'
+import AboutPage from './components/AboutPage'
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             !isAuthenticated && 
             <Route exact path="/" component={LandingPage} />
             }
+            <Route exact path='/about' component={AboutPage} />
             <PrivateRoute exact path="/" component={Dashboard} />
             <PrivateRoute path="/profile" component={Profile} />
             <PrivateRoute path="/jobsaccepted" component={JobsAccepted} />

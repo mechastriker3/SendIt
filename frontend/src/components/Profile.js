@@ -12,11 +12,13 @@ const Profile = () => {
 
   return (
     <Fragment>
-      <div className="container">
+      <div className="container" style={{paddingTop: '10px', paddingBottom: '10px'}}>
         <Breadcrumb>
           <Breadcrumb.Item href="/">Dashboard</Breadcrumb.Item>
           <Breadcrumb.Item active>Profile</Breadcrumb.Item>
         </Breadcrumb>
+        <br></br>
+        <h2>User Information</h2>
         <br></br>
         <Image src={user.picture} alt="Profile" width="100" height="100" roundedCircle/>
         <hr/>
@@ -29,6 +31,10 @@ const Profile = () => {
           <p style={{color: "grey"}}>Name: {user.name}</p>
           <p style={{color: "grey"}}>Email: {user.email}</p>
           </div>
+          <footer className="container" style={{paddingTop:'350px'}}>
+            <p>Team SendIt</p>
+            <p className="text-muted">Orbital 2020 by Joshua and Xing Peng</p>
+          </footer>
         </div>
     </Fragment>
 

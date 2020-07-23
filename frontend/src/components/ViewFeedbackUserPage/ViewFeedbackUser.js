@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useAuth0 } from '../../react-auth0-spa'
 import config from '../../auth_config.json'
-import { Button, Card, CardDeck } from 'react-bootstrap'
+import { Card, CardColumns } from 'react-bootstrap'
 
 
 
@@ -44,8 +44,8 @@ function FeedbackBySender(props) {
 
     return(
         <div>
-            <p>Average rating:  {senderAvgRating}/5</p>
-            <CardDeck>
+            <p>Average rating:  {senderAvgRating === null ? '-' : Math.round(senderAvgRating * 10)/10 }/5</p>
+            <CardColumns>
                 {jobs.filter(filterNoFeedbackSender).map(job => (
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
@@ -56,12 +56,10 @@ function FeedbackBySender(props) {
                                 <br></br>
                                 {job.senderFeedback}
                             </Card.Text>
-                            
-                            <Button variant="primary" href="/jobsposted">View Jobs Posted</Button>
                         </Card.Body>
                     </Card>
                 ))}
-            </CardDeck>
+            </CardColumns>
         </div>
     )
 }
@@ -109,8 +107,8 @@ function FeedbackByDeliverer(props) {
 
     return(
         <div>
-            <p>Average rating:  {delivererAvgRating}/5</p>
-            <CardDeck>
+            <p>Average rating:  {delivererAvgRating === null ? '-' : Math.round(delivererAvgRating *10)/10}/5</p>
+            <CardColumns>
                 {jobs.filter(filterNoFeedbackDeliver).map(job => (
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
@@ -124,7 +122,7 @@ function FeedbackByDeliverer(props) {
                         </Card.Body>
                     </Card>
                 ))}
-            </CardDeck>
+            </CardColumns>
         </div>
     )
 }
@@ -133,13 +131,18 @@ function ViewFeedbackUser(props) {
     const currentuserid = props.match.params.userid
     return (
         <div className="container" style={{paddingTop: '10px', paddingBottom: '10px'}}>
-            <h1>PAST JOBS FEEDBACKS</h1>
+            <h2>Past Jobs Feedback</h2>
             <hr></hr>
         
-            <p>Feedback by Senders</p>
+            <strong>Feedback by Senders</strong>
             <FeedbackBySender userid={currentuserid} />
-            <p>Feedback by Deliverers</p>
+            <strong>Feedback by Deliverers</strong>
             <FeedbackByDeliverer userid={currentuserid}/>
+
+            <footer className="container" style={{paddingTop:'200px'}}>
+                <p>Team SendIt</p>
+                <p className="text-muted">Orbital 2020 by Joshua and Xing Peng</p>
+            </footer>
         </div>
         
     )

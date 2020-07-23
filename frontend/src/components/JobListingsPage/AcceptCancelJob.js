@@ -17,7 +17,8 @@ const AcceptCancelJob = ({sender, jobid}) => {
     }
 
     const schema = yup.object({
-        delivererName: yup.string().required('Required')
+        delivererName: yup.string().required('Required'),
+        delivererContactNo: yup.string().matches(/^[0-9]{8}$/, 'Must be 8 digits').required('Required')
     })
     // function AcceptJob() {
     //     const deliveryJobId = currentjobid
@@ -121,6 +122,9 @@ const AcceptCancelJob = ({sender, jobid}) => {
                                         isValid={touched.delivererContactNo && !errors.delivererContactNo}
                                         isInvalid={touched.delivererContactNo && errors.delivererContactNo}
                                     />
+                                    <Form.Control.Feedback type="invalid">
+                                      {errors.delivererContactNo}
+                                    </Form.Control.Feedback>
                                 </Col>
                             </Form.Group>
 

@@ -8,17 +8,17 @@ import { useAuth0 } from "../../react-auth0-spa"
 const schema = yup.object({
     senderFirstName: yup.string().required('Required'),
     senderLastName: yup.string().required('Required'),
-    senderContact: yup.string().length(8, 'Invalid number').required('Required'),
+    senderContact: yup.string().matches(/^[0-9]{8}$/, 'Invalid number, must be 8 digits').required('Required'),
     pickUpAddress: yup.string().required('Required'),
     pickUpUnitNumber: yup.string().required('Required'),
-    pickUpPostal: yup.string().required('Required'),
+    pickUpPostal: yup.string().matches(/^[0-9]{6}$/, 'Invalid postal code, must be 6 digits').required('Required'),
 
     recipientFirstName: yup.string().required('Required'),
     recipientLastName: yup.string().required('Required'),
-    recipientContact: yup.string().length(8, 'Invalid number').required('Required'),
+    recipientContact: yup.string().matches(/^[0-9]{8}$/, 'Invalid number, must be 8 digits').required('Required'),
     destinationAddress: yup.string().required('Required'),
     destinationUnitNumber: yup.string().required('Required'),
-    destinationPostal: yup.string().required('Required'),
+    destinationPostal: yup.string().matches(/^[0-9]{6}$/, 'Invalid postal code, must be 6 digits').required('Required'),
 
     parcelSize: yup.string()
       .oneOf(
@@ -108,7 +108,7 @@ function FormInformation() {
           status
         }) => (
           <Form onSubmit={handleSubmit}>
-            <h3>Sender's Information</h3>
+            <h4>Sender's Information</h4>
               <Form.Row>
                 <Form.Group as={Col} md={{ span:4, offset:2 }} controlId="senderFirstName">
                   <Form.Label>Sender's First name</Form.Label>
@@ -216,7 +216,7 @@ function FormInformation() {
                 </Form.Group>
               </Form.Row>
 
-              <h3>Recipient's Information</h3>
+              <h4>Recipient's Information</h4>
                
               <Form.Row>
                 <Form.Group as={Col} md={{ span:4, offset:2 }} controlId="recipientFirstName">
@@ -325,7 +325,7 @@ function FormInformation() {
                 </Form.Group>
               </Form.Row>
 
-              <h3>Additional Details</h3>
+              <h4>Additional Details</h4>
               <Form.Row>
                 <Form.Group controlId="parcelSize" as={Col} md={{ offset:2, span:3}}>
                   <Form.Label>Select parcel size</Form.Label>
@@ -359,6 +359,7 @@ function FormInformation() {
                   value={values.fragile}
                   onChange={handleChange}
                   id="checkbox"
+                  checked={values.fragile}
                 />
                 <Form.Text className="text-muted">
                   Tick this checkbox if your parcel is fragile

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import "../App.css"
-import { Card, Col, Row } from 'react-bootstrap'
+import { Card, Col, Row, Button } from 'react-bootstrap'
 import { useAuth0 } from "../react-auth0-spa"
 import config from '../auth_config.json'
 import axios from 'axios'
 
 function Dashboard() {
     const [ count, setCount ] = useState([])
-    const { getTokenSilently } = useAuth0()
+    const { user, getTokenSilently } = useAuth0()
     const { apiOrigin = "http://localhost:5000/api/jobs-count" } = config;
 
     useEffect(() => {
@@ -30,15 +30,18 @@ function Dashboard() {
     
         return (
             <div className="background" style={{paddingTop:"50px"}}>
-                <h1>Welcome to your dashboard!</h1>  
+                <h2>Dashboard</h2>  
                 <div className="container" style={{paddingTop:"30px"}}>
-                    <h4>Here is your Current Activity:</h4>
+                    <h4>Welcome {user.name}!</h4>
+                    <h5>Here is your Current Activity:</h5>
                     <br></br>
                      
                     <Row>
                         <Col md={{ span: 4, offset: 2 }}>
                         <Card style={{ width: '100%' }}>
-                            <Card.Header>Jobs Posted</Card.Header>
+                            <Card.Header>
+                                <Button variant="outline-dark" href="/jobsposted">Jobs Posted</Button>
+                            </Card.Header>
                             <Card.Body>
                             <Card.Text>
                                 Pending Jobs: {count.jobsPostedPendingCount}
@@ -55,7 +58,9 @@ function Dashboard() {
                         </Col>
                         <Col md={{ span: 4 }}>
                         <Card style={{ width: '100%' }}>
-                            <Card.Header>Jobs Accepted</Card.Header>
+                            <Card.Header>
+                            <Button variant="outline-dark" href="/jobsaccepted">Jobs Accepted</Button>
+                            </Card.Header>
                             <Card.Body>    
                             <Card.Text>
                                 Ongoing Jobs: {count.jobsAcceptedCount}
@@ -70,6 +75,10 @@ function Dashboard() {
                     </Row>
                     
                 </div>
+                <footer className="container" style={{paddingTop:'400px'}}>
+                    <p>Team SendIt</p>
+                    <p className="text-muted">Orbital 2020 by Joshua and Xing Peng</p>
+                </footer>
             </div>
         )
     
