@@ -92,7 +92,7 @@ def get_current_user_info():
 
 
 @app.route('/api/all-jobs', methods=['GET'])
-# @requires_auth
+@requires_auth
 def get_all_jobs():
     # gets all jobs in the database
     result = jobs.find().sort([{ '$natural', -1 }])
@@ -231,10 +231,9 @@ def get_jobs_count():
 
 
 @app.route('/api/myfeedback', methods=['GET'])
-# @requires_auth
+@requires_auth
 def get_my_feedback():
-    auth0ID = 'google-oauth2|117032759256070508051'
-    # auth0ID = _request_ctx_stack.top.current_user['sub']
+    auth0ID = _request_ctx_stack.top.current_user['sub']
     result = {}
     if (request.args.get('by') == 'requested') :
         # generates array of deliverer feedback and ratings
@@ -359,7 +358,7 @@ def get_my_avg_rating():
         if result_sanitized:
             return jsonify(result_sanitized[0])
         else:
-            return jsonify(None)
+            return jsonify({"id":None,"avgRating":None})
 
     elif (request.args.get('by') == 'delivered') :
         # generates array of deliverer feedback and ratings
@@ -382,13 +381,13 @@ def get_my_avg_rating():
         if result_sanitized:
             return jsonify(result_sanitized[0])
         else:
-            return jsonify(None)
+            return jsonify({"id":None,"avgRating":None})
     else:
         return 'Wrong Query String'
 
 
 @app.route('/api/avg-rating/<user_id>', methods=['GET'])
-# @requires_auth
+@requires_auth
 def get_avg_rating_by_userId(user_id):
     # uses query string to determine whether to get jobs requested by you or delivered by you
     # query param ?by=requested or ?by=delivered
@@ -411,7 +410,10 @@ def get_avg_rating_by_userId(user_id):
         ]
         result = jobs.aggregate(pipeline_avg)
         result_sanitized = json.loads(json_util.dumps(result))
-        return jsonify(result_sanitized[0])
+        if result_sanitized:
+            return jsonify(result_sanitized[0])
+        else:
+            return jsonify({"id":None,"avgRating":None})
 
     elif (request.args.get('by') == 'delivered') :
         # generates array of deliverer feedback and ratings
@@ -430,13 +432,16 @@ def get_avg_rating_by_userId(user_id):
         ]
         result = jobs.aggregate(pipeline_avg)
         result_sanitized = json.loads(json_util.dumps(result))
-        return jsonify(result_sanitized[0])
+        if result_sanitized:
+            return jsonify(result_sanitized[0])
+        else:
+            return jsonify({"id":None,"avgRating":None})
     else:
         return 'Wrong Query String'
 
 
 @app.route('/api/one-job/<ObjectId:job_id>', methods=['GET'])
-# @requires_auth
+@requires_auth
 def get_jobs_by_oId(job_id):
     # gets one job with specific jobid
 
@@ -450,7 +455,7 @@ def get_jobs_by_oId(job_id):
 
 
 @app.route('/api/one-job/<ObjectId:job_id>', methods=['DELETE'])
-# @requires_auth
+@requires_auth
 def delete_jobs_by_oId(job_id):
     # gets one job with specific jobid
 
@@ -462,7 +467,7 @@ def delete_jobs_by_oId(job_id):
 
 
 @app.route('/api/one-job/update-sender-feedback/<ObjectId:job_id>', methods=['POST'])
-# @requires_auth
+@requires_auth
 def update_sender_feedback_jobs_by_oId(job_id):
     # updates feedback for one job with specific jobid
 
@@ -480,7 +485,7 @@ def update_sender_feedback_jobs_by_oId(job_id):
 
 
 @app.route('/api/one-job/update-deliverer-feedback/<ObjectId:job_id>', methods=['POST'])
-# @requires_auth
+@requires_auth
 def update_deliverer_feedback_jobs_by_oId(job_id):
     # updates feedback for one job with specific jobid
 
@@ -548,7 +553,7 @@ def update_jobs_deliverer_and_status__by_oId(job_id, new_status):
         # user_email = 'shadowreaper313@gmail.com'
         # user_name = 'Im Bob'
 
-        msg_body = templates.get_templates(template_type='testhtml').replace('##name##',user_name)
+        msg_body = templates.get_templates(template_type='order-completed').replace('##name##',user_name)
         gmail_main.gmailv1(client=GMAIL,mode='send',email_list=[user_email],header="(SendIt) YOUR REQUESTED JOB HAS BEEN COMPLETED",msg_body=msg_body)
 
         
@@ -588,7 +593,7 @@ def add_job():
 
 
 #Create email with template and send or draft
-@app.route('/esbackend/extapi/gmail/<mode>/<template_type>', methods = ['POST'])
+@app.route('/api/extapi/gmail/<mode>/<template_type>', methods = ['POST'])
 def gmail_send(mode,template_type):
     global GMAIL
     email_list = request.get_json()
