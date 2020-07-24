@@ -546,14 +546,26 @@ def update_jobs_deliverer_and_status__by_oId(job_id, new_status):
         return jsonify('Job Status Updated to: ' + new_status)
     elif (new_status == 'completed'):
         result = jobs.find_one_and_update({'_id':job_id}, {'$set': {'status':new_status}})
-        print(result)
+        # print(result)
+
         user_email = result['senderEmail']
         user_name = result['senderFirstName'] + result['senderLastName']
-        # uncomment the line below to test the gmail API
-        # user_email = 'shadowreaper313@gmail.com'
-        # user_name = 'Im Bob'
 
-        msg_body = templates.get_templates(template_type='order-completed').replace('##name##',user_name)
+        user_email = result['senderEmail']
+        user_name = result['senderFirstName'] + result['senderLastName']
+        
+        pickUpStreet = result['pickUpAddress']['street']
+        pickUpUnitNo = result['pickUpAddress']['unitNo']
+        pickUpPostalNo = result['pickUpAddress']['postalNo']
+        pickUpAddress = pickUpStreet + ' ' + pickUpUnitNo + ' | Singapore' + pickUpPostalNo
+
+        destinationStreet = result['destinationAddress']['street']
+        destinationUnitNo = result['destinationAddress']['unitNo']
+        destinationPostalNo = result['destinationAddress']['postalNo']
+        destinationAddress = destinationStreet + ' ' + destinationUnitNo + ' | Singapore ' + destinationPostalNo
+
+
+        msg_body = templates.get_templates(template_type='order-completed').replace('##name##', user_name).replace('##pickUpAddress##', pickUpAddress).replace('##destinationAddress##', destinationAddress)
         gmail_main.gmailv1(client=GMAIL,mode='send',email_list=[user_email],header="(SendIt) YOUR REQUESTED JOB HAS BEEN COMPLETED",msg_body=msg_body)
 
         

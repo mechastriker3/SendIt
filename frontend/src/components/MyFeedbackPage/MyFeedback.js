@@ -108,7 +108,7 @@ function FeedbackByDeliverer() {
             <p>Average rating:  {delivererAvgRating === null ? '-' : Math.round(delivererAvgRating *10)/10}/5</p>
             <CardColumns>
                 {jobs.filter(filterNoFeedbackDeliver).map(job => (
-                    <Card style={{ width: '18rem' }}>
+                    <Card style={{ width: '18rem' }} key={job._id.$oid}>
                         <Card.Body>
                             <Card.Header as="h6">From: {job.delivererName} </Card.Header>
                             <Card.Title>Rating: {job.delivererRating}/5</Card.Title>

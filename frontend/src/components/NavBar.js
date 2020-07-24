@@ -2,6 +2,15 @@ import React from 'react'
 import { useAuth0 } from "../react-auth0-spa"
 import { Navbar, Button, Nav, Image, NavDropdown } from 'react-bootstrap'
 
+const logoutWithRedirect = () => {
+  console.log(window.location.origin)
+  logout({
+    // replace url below with the redirect url after user logs out of your app
+    returnTo: `http://localhost:3000`
+  })
+};
+
+
 function NavBar() {
 
     const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
@@ -33,7 +42,7 @@ function NavBar() {
                     <Nav.Link href="/schedulejobs">Schedule Jobs</Nav.Link>
                 </Nav>
                 <Nav>
-                    <Button variant="outline-light" onClick={() => logout()}>Log out</Button>
+                    <Button variant="outline-light" onClick={() => logoutWithRedirect()}>Log out</Button>
                 </Nav>
             </Nav>
           )}       
