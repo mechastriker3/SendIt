@@ -11,11 +11,11 @@ def get_templates(template_type):
     '''
     switcher = {
 
-        'order_completed': 'backend/email_templates/order-completed.html',
-        'testhtml': 'backend/email_templates/testhtml.html'
+        'order_completed': 'email_templates/order-completed.html',
+        'testhtml': 'email_templates/testhtml.html'
 
     }
-    template_path = switcher.get(template_type,'backend/email_templates/error.txt')
+    template_path = switcher.get(template_type,'email_templates/error.txt')
     with open(template_path) as f:
         raw_template_str = f.read()
 
