@@ -29,14 +29,16 @@ function App() {
     return (
       <div>
         <NavBar />
-        <div className="centered">
+        <div className="App centered">
           <div style={{paddingTop: '10px', paddingBottom: '10px'}}>Loading...</div>
-          <Spinner animation="border" role="status">
-            <span className="sr-only">Loading...</span>
-          </Spinner>
+          <div>
+            <Spinner animation="border" role="status">
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+          </div>
+          
         </div>
-      </div>
-      
+      </div>  
     );
   }
 

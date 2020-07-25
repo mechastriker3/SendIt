@@ -20,14 +20,6 @@
   transform: translate(-50%, -50%);
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  border: 3px solid green;
-}
-
 .secondary {
   position: absolute;
   top: 55%;
