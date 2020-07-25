@@ -6,7 +6,7 @@ const JobListings = () => {
     return (
         <div className="container" style={{paddingTop: '10px', paddingBottom: '10px'}}>
             <Breadcrumb>
-                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item href="/">Dashboard</Breadcrumb.Item>
                 <Breadcrumb.Item active>Job Listings</Breadcrumb.Item>
             </Breadcrumb>
             <br></br>

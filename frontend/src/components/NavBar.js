@@ -2,23 +2,25 @@ import React from 'react'
 import { useAuth0 } from "../react-auth0-spa"
 import { Navbar, Button, Nav, Image, NavDropdown } from 'react-bootstrap'
 
-const logoutWithRedirect = () => {
-  console.log(window.location.origin)
-  logout({
-    // replace url below with the redirect url after user logs out of your app
-    returnTo: `http://localhost:3000`
-  })
-};
+
 
 
 function NavBar() {
 
     const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+
+    const logoutWithRedirect = () => {
+      console.log(window.location.origin)
+      logout({
+        // replace url below with the redirect url after user logs out of your app
+        returnTo: `http://localhost:3000`
+      })
+    };
   
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand href="/">
-                <Image src="https://i.ibb.co/zxwDk0M/sendit-logo.png" alt="SendIt Logo" width="50" height="50" rounded/>           
+                <Image src="https://i.ibb.co/3hKhfLw/send-It-logo.png" alt="SendIt Logo" width="50" height="50" rounded/>           
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

@@ -557,7 +557,7 @@ def update_jobs_deliverer_and_status__by_oId(job_id, new_status):
         pickUpStreet = result['pickUpAddress']['street']
         pickUpUnitNo = result['pickUpAddress']['unitNo']
         pickUpPostalNo = result['pickUpAddress']['postalNo']
-        pickUpAddress = pickUpStreet + ' ' + pickUpUnitNo + ' | Singapore' + pickUpPostalNo
+        pickUpAddress = pickUpStreet + ' ' + pickUpUnitNo + ' | Singapore ' + pickUpPostalNo
 
         destinationStreet = result['destinationAddress']['street']
         destinationUnitNo = result['destinationAddress']['unitNo']

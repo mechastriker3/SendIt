@@ -338,11 +338,11 @@ function FormInformation() {
                       isValid={touched.parcelSize && !errors.parcelSize}
                       isInvalid={touched.parcelSize && errors.parcelSize}
                       custom>
-                      <option value="" label="Select a size" />
-                      <option value="Small" label="Small" />
-                      <option value="Medium" label="Medium" />
-                      <option value="Large" label="Large" />
-                      <option value="ExtraLarge" label="Extra Large" />
+                      <option value="" label="Select a size">Select a size</option>
+                      <option value="Small" label="Small" >Small</option>
+                      <option value="Medium" label="Medium" >Medium</option>
+                      <option value="Large" label="Large" >Large</option>
+                      <option value="ExtraLarge" label="Extra Large">Extra Large</option>
                   </Form.Control>
                   <Form.Control.Feedback type="invalid">
                     {errors.parcelSize}
