@@ -47,7 +47,7 @@ function FeedbackBySender() {
                 {jobs.filter(filterNoFeedbackSender).map(job => (
                     <Card style={{ width: '18rem' }} key={job._id.$oid}>
                         <Card.Body>
-                            <Card.Header as="h5">From: {job.senderFirstName} {job.senderLastName} </Card.Header>
+                            <Card.Header as="h6">From: {job.senderFirstName} {job.senderLastName} </Card.Header>
                             <Card.Title>Rating: {job.senderRating}/5</Card.Title>
                             <Card.Text>
                                 Feedback: 
