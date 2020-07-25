@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import { Router, Switch, Route } from 'react-router-dom'
 import { useAuth0 } from "./react-auth0-spa"
+import Spinner from 'react-bootstrap/Spinner'
 import NavBar from "./components/NavBar"
 import Profile from "./components/Profile"
 import history from "./utils/history"
@@ -25,7 +26,14 @@ function App() {
   const { isAuthenticated, loading } = useAuth0();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <div>Loading...</div>
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      </div>
+    );
   }
 
     return (
