@@ -45,7 +45,6 @@ def update_user():
     # updates user info of current logged in user
 
     # for testing without login in
-    # auth0ID = 'google-oauth2|117032759256070508051'
 
     auth0ID = _request_ctx_stack.top.current_user['sub']
     users = mongo.db.users
@@ -73,7 +72,6 @@ def update_user():
 @app.route('/api/users/current-user', methods=['GET'])
 @requires_auth
 def get_current_user_info():
-    # auth0ID = 'google-oauth2|117032759256070508051'
     auth0ID = _request_ctx_stack.top.current_user['sub']
     users = mongo.db.users
     result = users.find({'userID':auth0ID})
@@ -95,7 +93,7 @@ def get_current_user_info():
 @requires_auth
 def get_all_jobs():
     # gets all jobs in the database
-    result = jobs.find().sort([{ '$natural', -1 }])
+    result = jobs.find().sort([( '$natural', -1 )])
 
     result_sanitized = json.loads(json_util.dumps(result))
 
@@ -106,7 +104,7 @@ def get_all_jobs():
 @requires_auth
 def get_jobs_by_status_pending(status):
     # gets all jobs which status is pending for job listing
-    result = jobs.find({'status' : status}).sort([{ '$natural', -1 }])
+    result = jobs.find({'status' : status}).sort([( '$natural', -1 )])
 
     result_sanitized = json.loads(json_util.dumps(result))
 
@@ -116,14 +114,14 @@ def get_jobs_by_status_pending(status):
 @app.route('/api/jobs/multi-status', methods=['GET'])
 @requires_auth 
 def get_all_jobs_by_multi_status():
-    # uses a querystring 
-    # gets all jobs in the database with the specified status1 & status2
-    # example:  localhost:5000/api/all-jobs/multi-status?status1=accepted&status2=inProgress
-    # use query param ?by=value to set to either get the requesterid or deliverer id
+    '''
+    - uses a querystring 
+    - gets all jobs in the database with the specified status1 & status2
+    - example:  localhost:5000/api/all-jobs/multi-status?status1=accepted&status2=inProgress
+    - use query param ?by=value to set to either get the requesterid or deliverer id
+    '''
 
     auth0ID = _request_ctx_stack.top.current_user['sub']
-    # uncomment me for testing without login
-    # auth0ID = 'google-oauth2|117032759256070508051'
     status1 = request.args.get('status1')
     status2 = request.args.get('status2')
 
@@ -137,14 +135,14 @@ def get_all_jobs_by_multi_status():
                     {'senderID' : auth0ID},
                     {'$or' : [ {'status' : status1}, {'status' : status2} ]}
                 ]
-            } ).sort([{ '$natural', -1 }])
+            } ).sort([( '$natural', -1 )])
         elif (request.args.get('by') == 'delivered') :
             result = jobs.find( {
                 '$and' : [
                     {'delivererID' : auth0ID},
                     {'$or' : [ {'status' : status1}, {'status' : status2} ]}
                 ]
-            } ).sort([{ '$natural', -1 }])
+            } ).sort([( '$natural', -1 )])
         else:
             return 'Wrong Query String'
     
@@ -168,22 +166,20 @@ def get_jobs_by_status(status):
 
     auth0ID = _request_ctx_stack.top.current_user['sub']
 
-    # uncomment me for testing without login
-    # auth0ID = 'google-oauth2|117032759256070508051'
     if (request.args.get('by') == 'requested') :
         result = jobs.find( {
             '$and' : [
                 {'status' : status},
                 {'senderID' : auth0ID}
             ]
-        } ).sort([{ '$natural', -1 }])
+        } ).sort([( '$natural', -1 )])
     elif (request.args.get('by') == 'delivered') :
         result = jobs.find( {
             '$and' : [
                 {'status' : status},
                 {'delivererID' : auth0ID}
             ]
-        } ).sort([{ '$natural', -1 }])
+        } ).sort([( '$natural', -1 )])
     else:
         return 'Wrong Query String'
 
@@ -197,8 +193,6 @@ def get_jobs_by_status(status):
 @requires_auth
 def get_jobs_count():
     auth0ID = _request_ctx_stack.top.current_user['sub']
-    # uncomment me for testing without login
-    # auth0ID = 'google-oauth2|117032759256070508051'
 
     
     jobs_posted_pending_count = jobs.count_documents( {
@@ -311,14 +305,14 @@ def get_feedback_by_userId(user_id):
                 {'status' : 'completed'},
                 {'senderID' : auth0ID}
             ]
-        } ).sort([{ '$natural', -1 }])
+        } ).sort([( '$natural', -1 )])
     elif (request.args.get('by') == 'delivered') :
         result = jobs.find( {
             '$and' : [
                 {'status' : 'completed'},
                 {'delivererID' : auth0ID}
             ]
-        } ).sort([{ '$natural', -1 }])
+        } ).sort([( '$natural', -1 )])
     else:
         return 'Wrong Query String'
 
@@ -335,7 +329,6 @@ def get_my_avg_rating():
     # query param ?by=requested or ?by=delivered
     
     auth0ID = _request_ctx_stack.top.current_user['sub']
-    # auth0ID = 'google-oauth2|117032759256070508051'
     if (request.args.get('by') == 'requested') :
         match_query = {
             '$and' : [
@@ -530,7 +523,6 @@ def update_jobs_deliverer_and_status__by_oId(job_id, new_status):
 
     auth0ID = _request_ctx_stack.top.current_user['sub']
     # for testing without login in
-    # auth0ID = 'google-oauth2|117032759256070508051'
     
     if (new_status == 'pending'):
         result = jobs.find_one_and_update({'_id':job_id}, {'$set': {'status':new_status, 'delivererID':None} } )
@@ -553,7 +545,7 @@ def update_jobs_deliverer_and_status__by_oId(job_id, new_status):
 
         user_email = result['senderEmail']
         user_name = result['senderFirstName'] + result['senderLastName']
-        
+
         pickUpStreet = result['pickUpAddress']['street']
         pickUpUnitNo = result['pickUpAddress']['unitNo']
         pickUpPostalNo = result['pickUpAddress']['postalNo']

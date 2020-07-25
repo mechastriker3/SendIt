@@ -11,7 +11,7 @@ def get_templates(template_type):
     '''
     switcher = {
 
-        'order_completed': 'email_templates/order-completed.html',
+        'order-completed': 'email_templates/order-completed.html',
         'testhtml': 'email_templates/testhtml.html'
 
     }
