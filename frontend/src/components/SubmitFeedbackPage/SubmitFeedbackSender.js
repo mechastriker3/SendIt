@@ -101,12 +101,12 @@ function SubmitFeedbackSender(props) {
                             isValid={touched.senderRating && !errors.senderRating}
                             isInvalid={touched.senderRating && errors.senderRating}
                             >
-                            <option value="" label="Select a rating" />
-                            <option value="1" label="1" />
-                            <option value="2" label="2" />
-                            <option value="3" label="3" />
-                            <option value="4" label="4" />
-                            <option value="5" label="5" />
+                            <option value="" label="Select a rating">Select a rating</option>
+                            <option value="1" label="1">1</option>
+                            <option value="2" label="2">2</option>
+                            <option value="3" label="3">3</option>
+                            <option value="4" label="4">4</option>
+                            <option value="5" label="5">5</option>
                         </Form.Control>
                         </Col>
                     </Form.Group>
