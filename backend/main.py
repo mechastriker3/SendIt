@@ -541,10 +541,7 @@ def update_jobs_deliverer_and_status__by_oId(job_id, new_status):
         # print(result)
 
         user_email = result['senderEmail']
-        user_name = result['senderFirstName'] + result['senderLastName']
-
-        user_email = result['senderEmail']
-        user_name = result['senderFirstName'] + result['senderLastName']
+        user_name = result['senderFirstName'] + ' ' + result['senderLastName']
 
         pickUpStreet = result['pickUpAddress']['street']
         pickUpUnitNo = result['pickUpAddress']['unitNo']
