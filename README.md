@@ -1,6 +1,6 @@
 # Milestone 3 Submission
 
-1. Introduction](#introducton)
+1. [Introduction](#introducton)
 - [2. Setting Up](#head1234)
 - [3.User Stories](#3.-user-stories)
 - [4. Components](#4.-Components)
