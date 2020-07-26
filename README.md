@@ -1,13 +1,13 @@
 # Milestone 3 Submission
 
 1. [Introduction](#introducton)
-- [2. Setting Up](#head1234)
-- [3.User Stories](#3.-user-stories)
-- [4. Components](#4.-Components)
-    - [4.1 Main Components](#4.1-Main-Components)
-    - [4.2 Features](###4.2-Features)
-        - [4.2.1 Milestone 2](####Features-implemented-in-Milestone-2)
-        - [4.2.2 Milestone 3]
+2. [Setting Up](#setting-up)
+3. [User Stories](#user-stories)
+4. [Components](#components)
+    4.1 [Main Components](#main-components)
+    4.2 [Features](###4.2-Features)
+        4.2.1 [Milestone 2](####Features-implemented-in-Milestone-2)
+        4.2.2 
     
 ## <a name="introducton"></a>1. Introduction
 **Proposed Level of Achievement:**
@@ -27,7 +27,7 @@ Normal delivery services usually require at least a few days to deliver your par
 We hope to make parcel delivery more efficient by providing a platform for commuters to help with deliveries.
 
 
-## <a name="head1234"></a>2. Setting Up
+## <a name="setting-up"></a>2.1 Setting Up
 ### Setting up the project on local machine **(example using Mac OSX):**
 
 **Prerequisites:**
@@ -86,7 +86,7 @@ Note: App runs on local database as this app is in development mode.
 
 
 
-## 3. User Stories
+## <a name="user-stories"></a>3. User Stories
 
 **High priority \> Must Have: \* \* \***
 
@@ -115,8 +115,8 @@ Note: App runs on local database as this app is in development mode.
 
 _Note: all the low priority features (features that we deem non vital for normal use of the application), will be mentioned in the section [Future Extension]_ _(put a section link here in .md file__)_
 
-## 4. Components
-### 4.1 Main Components
+## <a name="components"></a>4. Components
+### <a name="main-components"></a>4.1 Main Components
 Our web-application&#39;s frontend is made up of these main components:
 
 - Landing Page
@@ -149,11 +149,11 @@ User Information:
 
 ![](RackMultipart20200726-4-6pxwre_html_41a0ebf8d7ddfcfe.png)
 
-### 4.2 Features
+### <a name="features"></a>4.2 Features
 
 A **Web-application** that supports three main features. The user will be able to view their information on the profile tab, including their jobs accepted, jobs posted. Secondly, the user will be able to view all the job listings and accept jobs that they want to take up. Lastly the user will be able to post jobs up for delivery.
 
-#### **Features implemented in Milestone 2**
+#### <a name="milestone2-features"></a>**Features implemented in Milestone 2**
 
 a. Login to account
 
@@ -236,7 +236,7 @@ d. Schedule a new job
   - Comments
 - Form validation (Required fields)
 
-#### **Features completed in Milestone 3**
+#### <a name="milestone3-features"></a>**Features completed in Milestone 3**
 
 a. Integrating A Feedback And Rating System For Users:
 
@@ -272,7 +272,7 @@ e. Additional Job details:
 
 ![](RackMultipart20200726-4-6pxwre_html_1eb344f24d5ab8f9.png)
 
-#### **Additional features implemented:**
+#### <a name="additional-features"></a>**Additional features implemented:**
 
 a. Form Validation
 
@@ -307,8 +307,9 @@ Our application was styled with responsive react bootstrap components, hence our
 
 3. Payment System to give deliverers extra incentive when helping to deliver a parcel.
 
-## 5 Architecture
+## 5. Architecture
 
+### 5.1 Design Diagrams
 **Entity diagram**
 
 ![](RackMultipart20200726-4-6pxwre_html_c94165b2d637ab05.jpg)
@@ -321,31 +322,33 @@ Link to higher definition flowchart:
 
 [https://drive.google.com/file/d/105FR5FxnScB15wu7PLYDVwAzVQ5WjKyX/view?usp=sharing](https://drive.google.com/file/d/105FR5FxnScB15wu7PLYDVwAzVQ5WjKyX/view?usp=sharing)
 
-**Backend API Documentation:**
 
-[https://docs.google.com/document/d/1C6WGdDMYPHBBic84uD\_fXKpEUjGJFxsUaEzFwxNlIE8/edit?usp=sharing](https://docs.google.com/document/d/1C6WGdDMYPHBBic84uD_fXKpEUjGJFxsUaEzFwxNlIE8/edit?usp=sharing)
 
-**Tech Stack**
+### 5.2 Process
+
+**1. Tech Stack**
 
 Frontend User Interface (Client side):
 
-- HTML/CSS/Javascript (languages)
+- HTML/CSS/Javascript (Languages)
 - React.JS (Library)
 
 Backend (Server side):
 
-- Python (language)
-- Flask (python framework)
-- MongoDB (database)
+- Python (Language)
+- Flask (Python framework)
+- MongoDB (Database)
 
 Extras:
 
 - Auth0 - for users to log in to the application and authentication
 - GmailAPI - sends an email to the user when delivery is complete
 
-**Process**
+**2. Backend API Documentation:**
 
-**1. Frontend Development:**
+[https://docs.google.com/document/d/1C6WGdDMYPHBBic84uD\_fXKpEUjGJFxsUaEzFwxNlIE8/edit?usp=sharing](https://docs.google.com/document/d/1C6WGdDMYPHBBic84uD_fXKpEUjGJFxsUaEzFwxNlIE8/edit?usp=sharing)
+
+**3. Frontend Development:**
 
 **Auth0:**
 
@@ -378,7 +381,13 @@ Dependencies installed:
 - &quot;yup&quot;: &quot;^0.29.1&quot;
   - For validation(form input)
 
-**2. Backend Development:**
+**Issues faced:**
+
+Auth0:
+
+We had trouble implementing the authorization with the backend to make API requests. Console was showing an error &quot;Uncaught (in promise)&quot; in react-auth0-spa.js, which was obtained from the Auth0 tutorial. This error was caused by including the API audience identifier in our auth\_config.json file. However it was strange that the error was gone after a day. We concluded that it could have been an issue with the server on Auth0&#39;s side.
+
+**4. Backend Development:**
 
 **Python Flask**
 
@@ -398,7 +407,7 @@ Python Dependencies Installed:
   - Decoding of JWT returned by Auth0
 - See requirements.txt in the folder for packages version information
 
-## Dev Ops
+## 6. Dev Ops
 ### Deployment to remote machine(example using Heroku)
 
 **Prerequisites:**
@@ -431,7 +440,7 @@ Python Dependencies Installed:
   - Run git push heroku master
   - Your app is now deployed!!
 
-**3. System testing:**
+## 7. System testing:
 
 **Basic Testing in Development:**
 
@@ -463,12 +472,9 @@ This was rectified by correcting the option tag in these inputs.
 
 1. Third party cookies bug in Safari. Users do not stay logged in when they are routed back to the dashboard. This causes users to be routed back to the landing page instead of the dashboard. Upon research Auth0 noted that this can happen when browsers like Safari block third party cookies.
 
-**4. Other Issues faced:**
 
-Auth0:
 
-We had trouble implementing the authorization with the backend to make API requests. Console was showing an error &quot;Uncaught (in promise)&quot; in react-auth0-spa.js, which was obtained from the Auth0 tutorial. This error was caused by including the API audience identifier in our auth\_config.json file. However it was strange that the error was gone after a day. We concluded that it could have been an issue with the server on Auth0&#39;s side.
-
+## Appendix A
 **Appendix A - Gmail API Integration:**
 
 1. Before integration you will need an API credentials file from Google. Follow step one from this link and click on enable Gmail API. This will result in you getting a credentials.json file from Google.
