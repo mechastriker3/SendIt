@@ -3,11 +3,11 @@
 - [1. Introduction](##-1.-introduction)
 - [2. Setting Up](##-2-setting-up)
 - [3.User Stories](##-3.-User-Stories)
-- [Components](##4.-Components)
-    -[Main Components](###4.1-Main-Components)
-    - [Features](###4.2-Features)
-        -[Milestone 2](####Features-implemented-in-Milestone-2)
-        -
+- [4. Components](##4.-Components)
+    - [4.1 Main Components](###4.1-Main-Components)
+    - [4.2 Features](###4.2-Features)
+        - [4.2.1 Milestone 2](####Features-implemented-in-Milestone-2)
+        - [4.2.2 Milestone 3]
     
 ## 1. Introduction
 **Proposed Level of Achievement:**
