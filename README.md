@@ -85,7 +85,7 @@ You should see a (myenv) at the front:
   - Run `python wsgi.py`
   - You should see something like this:
 
-![](RackMultipart20200726-4-6pxwre_html_212f6024ee712953.png)
+![Backend Run](https://github.com/mechastriker3/SendIt/blob/master/images/BackendRun.png)
 
 Now that the frontend and backend servers are running you may test the application out with your own google accounts.
 
