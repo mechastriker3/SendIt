@@ -1,7 +1,7 @@
 # Milestone 3 Submission
 
-1. [Introduction](##1.-introduction)
-2. [Setting Up](##2-setting-up)
+1. [Introduction](##introduction)
+2. [Setting Up](##setting-up)
 3. [User Stories](##3.-User-Stories)
 4. [Components](##4.-Components)
     4.1 [Main Components](###4.1-Main-Components)
@@ -9,7 +9,7 @@
         4.2.1 [Milestone 2](####Features-implemented-in-Milestone-2)
         4.2.2 
     
-## 1. Introduction
+## Introduction
 **Proposed Level of Achievement:**
 
 Artemis
@@ -27,7 +27,7 @@ Normal delivery services usually require at least a few days to deliver your par
 We hope to make parcel delivery more efficient by providing a platform for commuters to help with deliveries.
 
 
-## 2.1 Setting Up
+## Setting Up
 ### Setting up the project on local machine **(example using Mac OSX):**
 
 **Prerequisites:**
