@@ -56,7 +56,8 @@ We hope to make parcel delivery more efficient by providing a platform for commu
 - Open the project in IDE(VSCode)
 - Open Terminal(for MacOS)
 - Start mongoDB
-  - Run brew services start mongodb-community@4.2
+  - Run 
+  `brew services start mongodb-community@4.2`
 - To start the **frontend** server:
   - cd into /frontend directory
   - Run npm install (This will install the dependencies required for project to run)
