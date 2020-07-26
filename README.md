@@ -266,7 +266,7 @@ a. Integrating A Feedback And Rating System For Users:
 b. Email confirmation:
 
 - A confirmation email will be sent to the user when the delivery has been completed with the job details.
-- See [appendix A](#appendixA) for more details about this feature
+- See [Appendix A](#appendixA) for more details about this feature
 
 ![Email](https://github.com/mechastriker3/SendIt/blob/master/images/Email.png)
 
