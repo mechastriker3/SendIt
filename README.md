@@ -76,12 +76,12 @@ Next, open a New terminal with the + button on the top right hand corner
 
 You should see a (env) at the front:
 
-![](RackMultipart20200726-4-6pxwre_html_2792bd5f194ea8a8.png)
+![VirtualEnv](https://github.com/mechastriker3/SendIt/blob/master/images/CondaEnv.png)
 
 - After our virtual environment has been set up, we need to install our requirements for the backend.
   - Run pip install -r requirements.txt
 - To start the backend server:
-  - Run python main.py
+  - Run python wsgi.py
   - You should see something like this:
 
 ![](RackMultipart20200726-4-6pxwre_html_212f6024ee712953.png)
