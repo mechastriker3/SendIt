@@ -301,7 +301,7 @@ b. Responsive Design
 
 Our application was styled with responsive react bootstrap components, hence our application is responsive and able to view on mobile devices.
 
-![Mobile Landing](https://github.com/mechastriker3/SendIt/blob/master/images/MobileLanding.png) ![Mobile Joblist](https://github.com/mechastriker3/SendIt/blob/master/images/MobileJobList.png) ![Mobile Schedule](https://github.com/mechastriker3/SendIt/blob/master/images/MobileSchedule.png) ![Mobile Accept](https://github.com/mechastriker3/SendIt/blob/master/images/MobileAccept.png)
+![Mobile Landing](https://github.com/mechastriker3/SendIt/blob/master/images/MobileLanding.png) ![Mobile Joblist](https://github.com/mechastriker3/SendIt/blob/master/images/MobileJobList.png) ![Mobile Schedule]() ![Mobile Accept](https://github.com/mechastriker3/SendIt/blob/master/images/MobileAccept.png)
 
 #### <a name="future-features"></a>**Possible Future Implementations:**
 
