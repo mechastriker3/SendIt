@@ -1,5 +1,5 @@
 
-from gmail_api import messenger
+from src.gmail_api import messenger
 
 
 def gmailv1(client,mode,email_list,header,msg_body):

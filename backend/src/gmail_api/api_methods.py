@@ -11,7 +11,7 @@ def get_credentials(scope='read'):
     # Output: Authorized Gmail API service instance
     # Default scope is read if nothing is passed into scope parameter
     # If modifying scope, delete the token file with .pickle extension
-    creds_path = 'creds/'
+    creds_path = 'src/creds/'
 
     switcher = {
         'read' : 'https://www.googleapis.com/auth/gmail.readonly',

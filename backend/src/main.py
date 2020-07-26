@@ -5,27 +5,38 @@ from flask_cors import CORS
 from bson import json_util
 from bson.son import SON
 import json
-from auth import AuthError, requires_auth
-from formatData import format_form_data, format_user_data
+import os
+from src.auth import AuthError, requires_auth
+from src.formatData import format_form_data, format_user_data
 
 app = Flask(__name__)
 
+# use lines below to connect to local MongoDB
 app.config['MONGO_DBNAME'] = 'send_it'
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/send_it'
 
-mongo = PyMongo(app)
 
+# use lines below to connect to remote MongoDB Atlas
+# usr_name = os.environ['DB_USERNAME']
+# pw = os.environ['DB_PASSWORD']
+# db_name = os.environ['DB_NAME']
+# app.config['MONGO_URI'] = "mongodb+srv://{0}:{1}@cluster0.ida8b.mongodb.net/{2}?retryWrites=true&w=majority".format(usr_name,pw,db_name)
+# app.config['MONGO_DBNAME'] = db_name
+
+
+# init DB connection
+mongo = PyMongo(app)
 # Database definitions
 jobs = mongo.db.jobs
-
+# Enabling CORS on flask app
 CORS(app)
 
 
 # initializing gmail api
-from gmail_api import gmail_main 
-from gmail_api import api_methods
+from src.gmail_api import gmail_main 
+from src.gmail_api import api_methods
 from googleapiclient.discovery import build
-from gmail_api import templates
+from src.gmail_api import templates
 import datetime
 # getting credentials for gmail api
 creds = api_methods.get_credentials('all')
@@ -38,55 +49,6 @@ GMAIL = build('gmail', 'v1', credentials=creds)
 def helloworld():
     print("Sever Online")
     return 'Server Online'
-
-@app.route('/api/users/update-user-info', methods=['PUT','POST'])
-@requires_auth
-def update_user():
-    # updates user info of current logged in user
-
-    # for testing without login in
-
-    auth0ID = _request_ctx_stack.top.current_user['sub']
-    users = mongo.db.users
-    result_count = users.find({'userID' : auth0ID}).count()
-    
-    data = request.get_json()['values']
-    # data = {'contactNo': '939393939'}
-    formatted_data = format_user_data(data)
-
-    if (result_count == 0):
-        formatted_data["userID"] = auth0ID
-        user_id = users.insert_one(formatted_data).inserted_id
-        print(user_id)
-        print(type(user_id))
-        return jsonify('user info added')
-    elif (result_count == 1):
-        result = users.find_one_and_update({'userID':auth0ID}, {'$set': formatted_data })
-        print(result)
-        print("one result found")
-        return jsonify("user info updated")
-    else:
-        raise LookupError
-
-
-@app.route('/api/users/current-user', methods=['GET'])
-@requires_auth
-def get_current_user_info():
-    auth0ID = _request_ctx_stack.top.current_user['sub']
-    users = mongo.db.users
-    result = users.find({'userID':auth0ID})
-    if (result.count() == 0):  
-        data = {'contactNo': '-'}
-        formatted_data = format_user_data(data)
-        formatted_data["userID"] = auth0ID
-        user_id = users.insert_one(formatted_data).inserted_id
-        print(user_id)
-        print(type(user_id))
-        return jsonify([data])
-    else:
-        result_sanitized = json.loads(json_util.dumps(result))
-
-        return jsonify(result_sanitized)
 
 
 @app.route('/api/all-jobs', methods=['GET'])
@@ -104,7 +66,8 @@ def get_all_jobs():
 @requires_auth
 def get_jobs_by_status_pending(status):
     # gets all jobs which status is pending for job listing
-    result = jobs.find({'status' : status}).sort([( '$natural', -1 )])
+    result = jobs.find({'status' : status}).sort([('$natural', -1 )])
+    print(result)
 
     result_sanitized = json.loads(json_util.dumps(result))
 
@@ -114,14 +77,14 @@ def get_jobs_by_status_pending(status):
 @app.route('/api/jobs/multi-status', methods=['GET'])
 @requires_auth 
 def get_all_jobs_by_multi_status():
-    '''
-    - uses a querystring 
-    - gets all jobs in the database with the specified status1 & status2
-    - example:  localhost:5000/api/all-jobs/multi-status?status1=accepted&status2=inProgress
-    - use query param ?by=value to set to either get the requesterid or deliverer id
-    '''
+    # uses a querystring 
+    # gets all jobs in the database with the specified status1 & status2
+    # example:  localhost:5000/api/all-jobs/multi-status?status1=accepted&status2=inProgress
+    # use query param ?by=value to set to either get the requesterid or deliverer id
 
     auth0ID = _request_ctx_stack.top.current_user['sub']
+    # uncomment me for testing without login
+    
     status1 = request.args.get('status1')
     status2 = request.args.get('status2')
 
@@ -156,7 +119,6 @@ def get_all_jobs_by_multi_status():
 @app.route('/api/jobs/<any("pending", "accepted", "inProgress", "completed"):status>', methods=['GET'])
 @requires_auth
 def get_jobs_by_status(status):
-     # NEW ENDPOINT !!!
 
     # Gets jobs with the specified <status> 
     # and is either requested by you or deliverered by you
@@ -166,6 +128,8 @@ def get_jobs_by_status(status):
 
     auth0ID = _request_ctx_stack.top.current_user['sub']
 
+    # uncomment me for testing without login
+    
     if (request.args.get('by') == 'requested') :
         result = jobs.find( {
             '$and' : [
@@ -193,6 +157,8 @@ def get_jobs_by_status(status):
 @requires_auth
 def get_jobs_count():
     auth0ID = _request_ctx_stack.top.current_user['sub']
+    # uncomment me for testing without login
+    
 
     
     jobs_posted_pending_count = jobs.count_documents( {
@@ -227,6 +193,8 @@ def get_jobs_count():
 @app.route('/api/myfeedback', methods=['GET'])
 @requires_auth
 def get_my_feedback():
+    # UNUSED ENDPOINT !!!(IN TESTING)
+    
     auth0ID = _request_ctx_stack.top.current_user['sub']
     result = {}
     if (request.args.get('by') == 'requested') :
@@ -329,6 +297,7 @@ def get_my_avg_rating():
     # query param ?by=requested or ?by=delivered
     
     auth0ID = _request_ctx_stack.top.current_user['sub']
+    
     if (request.args.get('by') == 'requested') :
         match_query = {
             '$and' : [
@@ -524,6 +493,7 @@ def update_jobs_deliverer_and_status__by_oId(job_id, new_status):
     auth0ID = _request_ctx_stack.top.current_user['sub']
     # for testing without login in
     
+    
     if (new_status == 'pending'):
         result = jobs.find_one_and_update({'_id':job_id}, {'$set': {'status':new_status, 'delivererID':None} } )
         return jsonify('Job Status Updated to: ' + new_status)
@@ -539,7 +509,6 @@ def update_jobs_deliverer_and_status__by_oId(job_id, new_status):
     elif (new_status == 'completed'):
         result = jobs.find_one_and_update({'_id':job_id}, {'$set': {'status':new_status}})
         # print(result)
-
         user_email = result['senderEmail']
         user_name = result['senderFirstName'] + ' ' + result['senderLastName']
 
@@ -593,6 +562,58 @@ def add_job():
     return 'Job Added'
 
 
+'''
+# INCOMPLETE ENDPOINTS FOR FUTURE ADDTIONAL USER PROFILE EDITING
+@app.route('/api/users/update-user-info', methods=['PUT','POST'])
+@requires_auth
+def update_user():
+    # updates user info of current logged in user
+
+    auth0ID = _request_ctx_stack.top.current_user['sub']
+    users = mongo.db.users
+    result_count = users.find({'userID' : auth0ID}).count()
+    
+    data = request.get_json()['values']
+    # data = {'contactNo': '939393939'}
+    formatted_data = format_user_data(data)
+
+    if (result_count == 0):
+        formatted_data["userID"] = auth0ID
+        user_id = users.insert_one(formatted_data).inserted_id
+        print(user_id)
+        print(type(user_id))
+        return jsonify('user info added')
+    elif (result_count == 1):
+        result = users.find_one_and_update({'userID':auth0ID}, {'$set': formatted_data })
+        print(result)
+        print("one result found")
+        return jsonify("user info updated")
+    else:
+        raise LookupError
+
+
+@app.route('/api/users/current-user', methods=['GET'])
+@requires_auth
+def get_current_user_info():
+    
+    auth0ID = _request_ctx_stack.top.current_user['sub']
+    users = mongo.db.users
+    result = users.find({'userID':auth0ID})
+    if (result.count() == 0):  
+        data = {'contactNo': '-'}
+        formatted_data = format_user_data(data)
+        formatted_data["userID"] = auth0ID
+        user_id = users.insert_one(formatted_data).inserted_id
+        print(user_id)
+        print(type(user_id))
+        return jsonify([data])
+    else:
+        result_sanitized = json.loads(json_util.dumps(result))
+
+        return jsonify(result_sanitized)
+'''
+
+
 #Create email with template and send or draft
 @app.route('/api/extapi/gmail/<mode>/<template_type>', methods = ['POST'])
 def gmail_send(mode,template_type):
@@ -616,6 +637,3 @@ def handle_auth_error(ex):
     response.status_code = ex.status_code
     return response
 
-
-if __name__ == '__main__':
-    app.run(debug=True, host='localhost',port=5000)
