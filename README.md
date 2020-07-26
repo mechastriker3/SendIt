@@ -14,7 +14,7 @@
 
 Artemis
 
-[![Poster](https://github.com/mechastriker3/SendIt/blob/master/images/Poster.png)][https://github.com/mechastriker3/SendIt/blob/master/images/Poster.png]
+![Poster](https://github.com/mechastriker3/SendIt/blob/master/images/Poster.png)
 
 **Motivation**
 
