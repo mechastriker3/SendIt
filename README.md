@@ -493,7 +493,7 @@ This was rectified by correcting the option tag in these inputs.
 
 
 
-## <a name="appendix"></a>Appendix
+## <a name="appendix"></a>8. Appendix
 ### <a name="appendixA"></a>**Appendix A - Gmail API Integration:**
 
 1. Before integration you will need an API credentials file from Google. Follow step one from this link and click on enable Gmail API. This will result in you getting a credentials.json file from Google.
