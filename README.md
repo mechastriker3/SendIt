@@ -1,20 +1,28 @@
 # Milestone 3 Submission
 
-1. [Introduction](#introducton)
-2. [Setting Up](#setting-up)
-3. [User Stories](#user-stories)
-4. [Components](#components)
-    4.1. [Main Components](#main-components)
-    4.2. [Features](###4.2-Features)
-        4.2.1. [Milestone 2](####Features-implemented-in-Milestone-2)
-        4.2.2. 
+- [1. Introduction](#introducton)
+- [2. Setting Up](#setting-up)
+- [3. User Stories](#user-stories)
+- [4. Components](#components)
+    - [4.1 Main Components](#main-components)
+    - [4.2 Features](#features)
+        - [4.2.1. Milestone 2](#milestone2-features)
+        - [4.2.2. Milestone 3](#milestone3-features)
+        - [4.2.3. Additional](#additional-features)
+        - [4.2.4. Future](#future-features)
+- [5. Architecture](#architecture)
+    - [5.1. Design Diagrams](#design-diagrams)
+    - [5.2. Processes](#processes)
+- [6. Dev Ops](#dev-ops)
+- [7. System Testing](#system-testing)
+
     
 ## <a name="introducton"></a>1. Introduction
 **Proposed Level of Achievement:**
 
 Artemis
 
-![Poster](https://github.com/mechastriker3/SendIt/blob/master/images/Poster.png)
+![](RackMultipart20200726-4-6pxwre_html_a7b3e8ca1a96a4b9.png)
 
 **Motivation**
 
@@ -294,7 +302,7 @@ Our application was styled with responsive react bootstrap components, hence our
 
 ![](RackMultipart20200726-4-6pxwre_html_2a21c1dfa155e613.png) ![](RackMultipart20200726-4-6pxwre_html_3d39bac0ec8be13e.png) ![](RackMultipart20200726-4-6pxwre_html_5f226617e8591593.png) ![](RackMultipart20200726-4-6pxwre_html_ab8bed69b9b9e451.png)
 
-#### **Possible Future Implementations:**
+#### <a name="future-features"></a>**Possible Future Implementations:**
 
 1. Integrating Google Maps API for our Schedule Jobs form. This way users can just key in a keyword or the postal code and their address will be filled up
    - Implementation: [https://mamoonblog.wordpress.com/2012/01/17/get-address-by-postcodegoogle-geocoding-api/](https://mamoonblog.wordpress.com/2012/01/17/get-address-by-postcodegoogle-geocoding-api/)
@@ -307,9 +315,9 @@ Our application was styled with responsive react bootstrap components, hence our
 
 3. Payment System to give deliverers extra incentive when helping to deliver a parcel.
 
-## 5. Architecture
+## <a name="architecture"></a>5. Architecture
 
-### 5.1 Design Diagrams
+### <a name="design-diagrams"></a>5.1 Design Diagrams
 **Entity diagram**
 
 ![](RackMultipart20200726-4-6pxwre_html_c94165b2d637ab05.jpg)
@@ -324,7 +332,7 @@ Link to higher definition flowchart:
 
 
 
-### 5.2 Process
+### <a name="processes"></a>5.2 Processes
 
 **1. Tech Stack**
 
@@ -407,7 +415,7 @@ Python Dependencies Installed:
   - Decoding of JWT returned by Auth0
 - See requirements.txt in the folder for packages version information
 
-## 6. Dev Ops
+## <a name="dev-ops"></a>6. Dev Ops
 ### Deployment to remote machine(example using Heroku)
 
 **Prerequisites:**
@@ -440,7 +448,7 @@ Python Dependencies Installed:
   - Run git push heroku master
   - Your app is now deployed!!
 
-## 7. System testing:
+## <a name="system-testing"></a>7. System Testing:
 
 **Basic Testing in Development:**
 
