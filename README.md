@@ -1,7 +1,7 @@
 # Milestone 3 Submission
 
 - [1. Introduction](#1.-introduction)
-- [2. Setting Up](#2.-setting-up)
+- [2. Setting Up](#head1234)
 - [3.User Stories](#3.-user-stories)
 - [4. Components](#4.-Components)
     - [4.1 Main Components](#4.1-Main-Components)
@@ -27,7 +27,7 @@ Normal delivery services usually require at least a few days to deliver your par
 We hope to make parcel delivery more efficient by providing a platform for commuters to help with deliveries.
 
 
-## 2. Setting Up
+## <a name="head1234"></a>2. Setting Up
 ### Setting up the project on local machine **(example using Mac OSX):**
 
 **Prerequisites:**
