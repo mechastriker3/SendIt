@@ -255,7 +255,7 @@ a. Integrating A Feedback And Rating System For Users:
 b. Email confirmation:
 
 - A confirmation email will be sent to the user when the delivery has been completed with the job details.
-- See appendix A for more details about this feature
+- See [appendix A](#appendixA) for more details about this feature
 
 ![](RackMultipart20200726-4-6pxwre_html_eefd4477c9e88462.png)
 
@@ -482,8 +482,8 @@ This was rectified by correcting the option tag in these inputs.
 
 
 
-## Appendix A
-**Appendix A - Gmail API Integration:**
+## <a name="appendix"></a>Appendix
+### <a name="appendixA"></a>**Appendix A - Gmail API Integration:**
 
 1. Before integration you will need an API credentials file from Google. Follow step one from this link and click on enable Gmail API. This will result in you getting a credentials.json file from Google.
 2. Clear the folder backend/src/creds (relative to the root folder SendIt) and put the credentials.json file there.
