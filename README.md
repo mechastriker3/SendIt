@@ -22,7 +22,7 @@
 
 Artemis
 
-![](RackMultipart20200726-4-6pxwre_html_a7b3e8ca1a96a4b9.png)
+![Poster](https://github.com/mechastriker3/SendIt/blob/master/images/Poster.png)
 
 **Motivation**
 
@@ -52,7 +52,7 @@ We hope to make parcel delivery more efficient by providing a platform for commu
 
 - Clone repository from [https://github.com/mechastriker3/SendIt.git](https://github.com/mechastriker3/SendIt.git)
 - Directory Structure (blue = folder, white = files):
-  - ![](RackMultipart20200726-4-6pxwre_html_bdd045760573e25d.png)
+  - ![Directory](https://github.com/mechastriker3/SendIt/blob/master/images/Directory.png)
 - Open the project in IDE(VSCode)
 - Open Terminal(for MacOS)
 - Start mongoDB
@@ -63,7 +63,7 @@ We hope to make parcel delivery more efficient by providing a platform for commu
   - Run npm start
   - Once you see that it has compiled successfully means the server is active
 
-![](RackMultipart20200726-4-6pxwre_html_f506dcf03cf7ddda.png)
+![Compiled](https://github.com/mechastriker3/SendIt/blob/master/images/Compiled.png)
 
 Next, open a New terminal with the + button on the top right hand corner
 
@@ -141,21 +141,21 @@ Below are some screenshots of the application:
 
 Dashboard:
 
-![](RackMultipart20200726-4-6pxwre_html_a7c2c8c2a79b2b0d.png)
+![Dashboard](https://github.com/mechastriker3/SendIt/blob/master/images/MainDashboard.png)
 
 Job Listing Page:
 
 (Note: All pages with tables have expandable rows. Click on the job for the row to expand)
 
-![](RackMultipart20200726-4-6pxwre_html_8696a003feb977a2.png)
+![Job Listing](https://github.com/mechastriker3/SendIt/blob/master/images/MainJobListing.png)
 
 Schedule Job Page:
 
-![](RackMultipart20200726-4-6pxwre_html_3a3dad7018cd401b.png)
+![Schedule Job](https://github.com/mechastriker3/SendIt/blob/master/images/MainSchedule.png)
 
 User Information:
 
-![](RackMultipart20200726-4-6pxwre_html_41a0ebf8d7ddfcfe.png)
+![User Information](https://github.com/mechastriker3/SendIt/blob/master/images/MainUserInfo.png)
 
 ### <a name="features"></a>4.2 Features
 
@@ -257,7 +257,7 @@ b. Email confirmation:
 - A confirmation email will be sent to the user when the delivery has been completed with the job details.
 - See [appendix A](#appendixA) for more details about this feature
 
-![](RackMultipart20200726-4-6pxwre_html_eefd4477c9e88462.png)
+![Email](https://github.com/mechastriker3/SendIt/blob/master/images/Email.png)
 
 c. Dashboard:
 
@@ -274,11 +274,11 @@ e. Additional Job details:
 - Each Job&#39;s expanded row will contain more information.
 - When deliverers accept a job they will be able to view sender&#39;s and recipient&#39;s name and contact numbers in Jobs Accepted.
 
-![](RackMultipart20200726-4-6pxwre_html_b32165226ca42172.png)
+![Sender Details](https://github.com/mechastriker3/SendIt/blob/master/images/SenderDetails.png)
 
 - Senders will be able to view the deliverer&#39;s name and contact number once a deliverer has accepted the job under Jobs Posted.
 
-![](RackMultipart20200726-4-6pxwre_html_1eb344f24d5ab8f9.png)
+![Deliverer Details](https://github.com/mechastriker3/SendIt/blob/master/images/DelivererDetails.png)
 
 #### <a name="additional-features"></a>**Additional features implemented:**
 
@@ -290,17 +290,17 @@ Below are some screenshots:
 
 Accept Job Modal contact number validation:
 
-![](RackMultipart20200726-4-6pxwre_html_ea9faceaad527a7d.png)
+![Accept Validation](https://github.com/mechastriker3/SendIt/blob/master/images/AcceptValidation.png)
 
 Schedule Job Contact number and postal code validation.
 
-![](RackMultipart20200726-4-6pxwre_html_58a8958ec3f5f835.png)
+![Form Validation](https://github.com/mechastriker3/SendIt/blob/master/images/ScheduleValidation.png)
 
 b. Responsive Design
 
 Our application was styled with responsive react bootstrap components, hence our application is responsive and able to view on mobile devices.
 
-![](RackMultipart20200726-4-6pxwre_html_2a21c1dfa155e613.png) ![](RackMultipart20200726-4-6pxwre_html_3d39bac0ec8be13e.png) ![](RackMultipart20200726-4-6pxwre_html_5f226617e8591593.png) ![](RackMultipart20200726-4-6pxwre_html_ab8bed69b9b9e451.png)
+![Mobile Landing](https://github.com/mechastriker3/SendIt/blob/master/images/MobileLanding.png) ![Mobile Joblist](https://github.com/mechastriker3/SendIt/blob/master/images/MobileJobList.png) ![Mobile Schedule](https://github.com/mechastriker3/SendIt/blob/master/images/MobileSchedule.png) ![Mobile Accept](https://github.com/mechastriker3/SendIt/blob/master/images/MobileAccept.png)
 
 #### <a name="future-features"></a>**Possible Future Implementations:**
 
@@ -320,11 +320,11 @@ Our application was styled with responsive react bootstrap components, hence our
 ### <a name="design-diagrams"></a>5.1 Design Diagrams
 **Entity diagram**
 
-![](RackMultipart20200726-4-6pxwre_html_c94165b2d637ab05.jpg)
+![ERD](https://github.com/mechastriker3/SendIt/blob/master/images/ERD.jpg)
 
 **UX Flowchart**
 
-![](RackMultipart20200726-4-6pxwre_html_98cd7af00b97d041.jpg)
+![UXDiagram](https://github.com/mechastriker3/SendIt/blob/master/images/UXDiagram.jpg)
 
 Link to higher definition flowchart:
 
@@ -430,7 +430,7 @@ Python Dependencies Installed:
 
 - Clone repository from [https://github.com/mechastriker3/SendIt.git](https://github.com/mechastriker3/SendIt.git)
 - Directory Structure (blue = folder, white = files):
-  - ![](RackMultipart20200726-4-6pxwre_html_bdd045760573e25d.png)
+  - ![Directory](https://github.com/mechastriker3/SendIt/blob/master/images/Directory.png)
 - To set up DB
   - Login to mongo atlas and create a cluster, inside the cluster create a database and inside the database create a collection called jobs
 - To deploy the **backend** API service:
@@ -438,13 +438,12 @@ Python Dependencies Installed:
   - cd into /backend directory
   - Run ```heroku login -i``` and login to your heroku account
   - Run ```heroku config:set DB_USERNAME=<your_db_username> DB_PASSWORD= <your_db_password> DB_NAME=<send_it CLUSTER\_URL=\&lt;your\_cluster\_url```
-  - Cluster url highlighted in the example below ![](RackMultipart20200726-4-6pxwre_html_2a4487eb79f728d6.png)
-  - Run heroku create \&lt;name\_of\_your\_backend\_API\&gt;
-  -
+  - Cluster url highlighted in the example below ![ConnectionString](https://github.com/mechastriker3/SendIt/blob/master/images/ConnectionString.png)
+  - Run heroku create <name_of_your_backend_API>
   - Run git push heroku master
 - To deploy the **frontend** UI:
   - cd into the /frontend directory
-  - Run heroku create \&lt;name\_of\_your\_app\&gt; --buildpack mars/create-react-app
+  - Run heroku create <name_of_your_app> --buildpack mars/create-react-app
   - Run git push heroku master
   - Your app is now deployed!!
 
@@ -456,11 +455,11 @@ We did basic system testing by using 2 different google accounts to test our app
 
 The sender schedules the job and the job shows up in the job listing page as well as the jobs posted page and splits according to its status(pending/ongoing/history). We also tested to make sure that a sender cannot accept his own job(instead a cancel job button will be shown as seen in the screenshot below)
 
-![](RackMultipart20200726-4-6pxwre_html_2c95aab6ace21b64.png)
+![Cancel Button](https://github.com/mechastriker3/SendIt/blob/master/images/CancelButton.png)
 
 As a deliverer, jobs viewed in the job listing page will have an accept job button in the job&#39;s expanded row as seen in the screenshot below:
 
-![](RackMultipart20200726-4-6pxwre_html_7cc95a9bb5fec15a.png)
+![Accept Button](https://github.com/mechastriker3/SendIt/blob/master/images/AcceptButton.png)
 
 Once a job has been accepted we tested to make sure the status is changed correctly and shows up on the deliverer&#39;s jobs accepted page as well as the sender&#39;s jobs posted page(ongoing jobs tab). One status change will update the table for both the sender and the deliverer accordingly.
 
@@ -474,7 +473,7 @@ However we encountered certain bugs in the mobile version.
 
 1. Options are not displaying as select options in the leave feedback rating input as well as the select parcel size select input.
 
-![](RackMultipart20200726-4-6pxwre_html_9d0f94acd1caff95.png)
+![MobileBug](https://github.com/mechastriker3/SendIt/blob/master/images/MobileSelectBug.png)
 
 This was rectified by correcting the option tag in these inputs.
 
