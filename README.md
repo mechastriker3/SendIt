@@ -14,7 +14,7 @@
 
 Artemis
 
-![](RackMultipart20200726-4-6pxwre_html_a7b3e8ca1a96a4b9.png)
+![Poster](https://github.com/mechastriker3/SendIt/blob/master/images/Poster.png)
 
 **Motivation**
 
