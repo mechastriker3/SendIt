@@ -14,7 +14,6 @@ import Dashboard from "./components/Dashboard"
 import JobsAccepted from './components/JobsAcceptedPage/JobsAccepted'
 import JobsPosted from './components/JobsPostedPage/JobsPosted'
 import MyFeedback from './components/MyFeedbackPage/MyFeedback'
-// import ViewFeedback from './components/ViewFeedbackPage/ViewFeedback'
 import ViewFeedbackUser from './components/ViewFeedbackUserPage/ViewFeedbackUser'
 import SubmitFeedbackSender from './components/SubmitFeedbackPage/SubmitFeedbackSender'
 import SubmitFeedbackDel from './components/SubmitFeedbackPage/SubmitFeedbackDel'
@@ -59,7 +58,6 @@ function App() {
             <PrivateRoute path="/joblistings" component={JobListings} />
             <PrivateRoute path="/schedulejobs" component={ScheduleJob} />
             <PrivateRoute path="/myfeedback" component={MyFeedback} />
-            {/* <PrivateRoute path="/viewfeedback" component={ViewFeedback} /> */}
             <PrivateRoute path="/viewfeedback/:userid" component={ViewFeedbackUser} />
             <PrivateRoute path="/submitfeedbacksender/:jobid" component={SubmitFeedbackSender} />
             <PrivateRoute path="/submitfeedbackdel/:jobid" component={SubmitFeedbackDel} />
