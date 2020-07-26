@@ -254,6 +254,8 @@ a. Integrating A Feedback And Rating System For Users:
 - Users exchange feedback and provide ratings(From 1-5) for each other based on the job completed.
 - Deliverers are able to view sender&#39;s past feedback and ratings before accepting the job and after they accept the job.
 - Senders are able to view deliverer&#39;s past feedback and ratings once a deliverer has accepted their job.
+- Users are also able to view their own feedback under view feedbacks in the User Information page.
+- Average rating out of 5.
 
 b. Email confirmation:
 
