@@ -1,10 +1,10 @@
 # Milestone 3 Submission
 
-- [1. Introduction](##-1.-introduction)
-- [2. Setting Up](##-2-setting-up)
-- [3.User Stories](##-3.-User-Stories)
-- [4. Components](##4.-Components)
-    - [4.1 Main Components](###4.1-Main-Components)
+- [1. Introduction](#1.-introduction)
+- [2. Setting Up](#2.-setting-up)
+- [3.User Stories](#3.-user-stories)
+- [4. Components](#4.-Components)
+    - [4.1 Main Components](#4.1-Main-Components)
     - [4.2 Features](###4.2-Features)
         - [4.2.1 Milestone 2](####Features-implemented-in-Milestone-2)
         - [4.2.2 Milestone 3]
@@ -27,7 +27,7 @@ Normal delivery services usually require at least a few days to deliver your par
 We hope to make parcel delivery more efficient by providing a platform for commuters to help with deliveries.
 
 
-## 2.1 Setting Up
+## 2. Setting Up
 ### Setting up the project on local machine **(example using Mac OSX):**
 
 **Prerequisites:**
