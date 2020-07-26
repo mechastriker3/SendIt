@@ -1,7 +1,7 @@
 # Milestone 3 Submission
 
-1. [Introduction](##1.-Introduction)
-2. [Setting Up](##2-Setting-Up)
+1. [Introduction](##1.-introduction)
+2. [Setting Up](##2-setting-up)
 3. [User Stories](##3.-User-Stories)
 4. [Components](##4.-Components)
     4.1 [Main Components](###4.1-Main-Components)
