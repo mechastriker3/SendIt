@@ -1,20 +1,28 @@
 # Milestone 3 Submission
 
-1. [Introduction](#introducton)
-2. [Setting Up](#setting-up)
-3. [User Stories](#user-stories)
-4. [Components](#components)
-    4.1. [Main Components](#main-components)
-    4.2. [Features](###4.2-Features)
-        4.2.1. [Milestone 2](####Features-implemented-in-Milestone-2)
-        4.2.2. 
+- [1. Introduction](#introducton)
+- [2. Setting Up](#setting-up)
+- [3. User Stories](#user-stories)
+- [4. Components](#components)
+    - [4.1 Main Components](#main-components)
+    - [4.2 Features](#features)
+        - [4.2.1. Milestone 2](#milestone2-features)
+        - [4.2.2. Milestone 3](#milestone3-features)
+        - [4.2.3. Additional](#additional-features)
+        - [4.2.4. Future](#future-features)
+- [5. Architecture](#architecture)
+    - [5.1. Design Diagrams](#design-diagrams)
+    - [5.2. Processes](#processes)
+- [6. Dev Ops](#dev-ops)
+- [7. System Testing](#system-testing)
+
     
 ## <a name="introducton"></a>1. Introduction
 **Proposed Level of Achievement:**
 
 Artemis
 
-![](RackMultipart20200726-4-6pxwre_html_a7b3e8ca1a96a4b9.png)
+![Poster](https://github.com/mechastriker3/SendIt/blob/master/images/Poster.png)
 
 **Motivation**
 
@@ -44,36 +52,37 @@ We hope to make parcel delivery more efficient by providing a platform for commu
 
 - Clone repository from [https://github.com/mechastriker3/SendIt.git](https://github.com/mechastriker3/SendIt.git)
 - Directory Structure (blue = folder, white = files):
-  - ![](RackMultipart20200726-4-6pxwre_html_bdd045760573e25d.png)
+  - ![Directory](https://github.com/mechastriker3/SendIt/blob/master/images/Directory.png)
 - Open the project in IDE(VSCode)
 - Open Terminal(for MacOS)
 - Start mongoDB
-  - Run brew services start mongodb-community@4.2
+  - Run 
+  `brew services start mongodb-community@4.2`
 - To start the **frontend** server:
   - cd into /frontend directory
-  - Run npm install (This will install the dependencies required for project to run)
-  - Run npm start
+  - Run `npm install` (This will install the dependencies required for project to run)
+  - Run `npm start`
   - Once you see that it has compiled successfully means the server is active
 
-![](RackMultipart20200726-4-6pxwre_html_f506dcf03cf7ddda.png)
+![Compiled](https://github.com/mechastriker3/SendIt/blob/master/images/Compiled.png)
 
 Next, open a New terminal with the + button on the top right hand corner
 
 - To start the **backend** server:
   - cd into /backend directory
   - Set up virtual environment (so that pip packages will be contained in the environment)
-    - Run conda create -n myenv python **=** x.x anaconda(replace x.x with python version, in our case python 3.7)
-    - This will create a virtual environment named myenv. Run conda env list to check if the environment is created. You should see an environment myenv.
-    - Next we will activate the virtual environment by running conda activate myenv
+    - Run `conda create -n myenv python **=** x.x anaconda`(replace x.x with python version, in our case python 3.7)
+    - This will create a virtual environment named myenv. Run `conda env list` to check if the environment is created. You should see an environment myenv.
+    - Next we will activate the virtual environment by running `conda activate myenv`
 
-You should see a (env) at the front:
+You should see a (myenv) at the front:
 
-![](RackMultipart20200726-4-6pxwre_html_2792bd5f194ea8a8.png)
+![VirtualEnv](https://github.com/mechastriker3/SendIt/blob/master/images/CondaEnv.png)
 
 - After our virtual environment has been set up, we need to install our requirements for the backend.
-  - Run pip install -r requirements.txt
+  - Run `pip install -r requirements.txt`
 - To start the backend server:
-  - Run python main.py
+  - Run `python wsgi.py`
   - You should see something like this:
 
 ![](RackMultipart20200726-4-6pxwre_html_212f6024ee712953.png)
@@ -133,21 +142,21 @@ Below are some screenshots of the application:
 
 Dashboard:
 
-![](RackMultipart20200726-4-6pxwre_html_a7c2c8c2a79b2b0d.png)
+![Dashboard](https://github.com/mechastriker3/SendIt/blob/master/images/MainDashboard.png)
 
 Job Listing Page:
 
 (Note: All pages with tables have expandable rows. Click on the job for the row to expand)
 
-![](RackMultipart20200726-4-6pxwre_html_8696a003feb977a2.png)
+![Job Listing](https://github.com/mechastriker3/SendIt/blob/master/images/MainJobListing.png)
 
 Schedule Job Page:
 
-![](RackMultipart20200726-4-6pxwre_html_3a3dad7018cd401b.png)
+![Schedule Job](https://github.com/mechastriker3/SendIt/blob/master/images/MainSchedule.png)
 
 User Information:
 
-![](RackMultipart20200726-4-6pxwre_html_41a0ebf8d7ddfcfe.png)
+![User Information](https://github.com/mechastriker3/SendIt/blob/master/images/MainUserInfo.png)
 
 ### <a name="features"></a>4.2 Features
 
@@ -247,9 +256,9 @@ a. Integrating A Feedback And Rating System For Users:
 b. Email confirmation:
 
 - A confirmation email will be sent to the user when the delivery has been completed with the job details.
-- See appendix A for more details about this feature
+- See [appendix A](#appendixA) for more details about this feature
 
-![](RackMultipart20200726-4-6pxwre_html_eefd4477c9e88462.png)
+![Email](https://github.com/mechastriker3/SendIt/blob/master/images/Email.png)
 
 c. Dashboard:
 
@@ -266,11 +275,11 @@ e. Additional Job details:
 - Each Job&#39;s expanded row will contain more information.
 - When deliverers accept a job they will be able to view sender&#39;s and recipient&#39;s name and contact numbers in Jobs Accepted.
 
-![](RackMultipart20200726-4-6pxwre_html_b32165226ca42172.png)
+![Sender Details](https://github.com/mechastriker3/SendIt/blob/master/images/SenderDetails.png)
 
 - Senders will be able to view the deliverer&#39;s name and contact number once a deliverer has accepted the job under Jobs Posted.
 
-![](RackMultipart20200726-4-6pxwre_html_1eb344f24d5ab8f9.png)
+![Deliverer Details](https://github.com/mechastriker3/SendIt/blob/master/images/DelivererDetails.png)
 
 #### <a name="additional-features"></a>**Additional features implemented:**
 
@@ -282,19 +291,19 @@ Below are some screenshots:
 
 Accept Job Modal contact number validation:
 
-![](RackMultipart20200726-4-6pxwre_html_ea9faceaad527a7d.png)
+![Accept Validation](https://github.com/mechastriker3/SendIt/blob/master/images/AcceptValidation.png)
 
 Schedule Job Contact number and postal code validation.
 
-![](RackMultipart20200726-4-6pxwre_html_58a8958ec3f5f835.png)
+![Form Validation](https://github.com/mechastriker3/SendIt/blob/master/images/ScheduleValidation.png)
 
 b. Responsive Design
 
 Our application was styled with responsive react bootstrap components, hence our application is responsive and able to view on mobile devices.
 
-![](RackMultipart20200726-4-6pxwre_html_2a21c1dfa155e613.png) ![](RackMultipart20200726-4-6pxwre_html_3d39bac0ec8be13e.png) ![](RackMultipart20200726-4-6pxwre_html_5f226617e8591593.png) ![](RackMultipart20200726-4-6pxwre_html_ab8bed69b9b9e451.png)
+![Mobile Landing](https://github.com/mechastriker3/SendIt/blob/master/images/MobileLanding.png) ![Mobile Joblist](https://github.com/mechastriker3/SendIt/blob/master/images/MobileJobList.png) ![Mobile Schedule](https://github.com/mechastriker3/SendIt/blob/master/images/MobileSchedule.png) ![Mobile Accept](https://github.com/mechastriker3/SendIt/blob/master/images/MobileAccept.png)
 
-#### **Possible Future Implementations:**
+#### <a name="future-features"></a>**Possible Future Implementations:**
 
 1. Integrating Google Maps API for our Schedule Jobs form. This way users can just key in a keyword or the postal code and their address will be filled up
    - Implementation: [https://mamoonblog.wordpress.com/2012/01/17/get-address-by-postcodegoogle-geocoding-api/](https://mamoonblog.wordpress.com/2012/01/17/get-address-by-postcodegoogle-geocoding-api/)
@@ -307,16 +316,16 @@ Our application was styled with responsive react bootstrap components, hence our
 
 3. Payment System to give deliverers extra incentive when helping to deliver a parcel.
 
-## 5. Architecture
+## <a name="architecture"></a>5. Architecture
 
-### 5.1 Design Diagrams
+### <a name="design-diagrams"></a>5.1 Design Diagrams
 **Entity diagram**
 
-![](RackMultipart20200726-4-6pxwre_html_c94165b2d637ab05.jpg)
+![ERD](https://github.com/mechastriker3/SendIt/blob/master/images/ERD.jpg)
 
 **UX Flowchart**
 
-![](RackMultipart20200726-4-6pxwre_html_98cd7af00b97d041.jpg)
+![UXDiagram](https://github.com/mechastriker3/SendIt/blob/master/images/UXDiagram.jpg)
 
 Link to higher definition flowchart:
 
@@ -324,7 +333,7 @@ Link to higher definition flowchart:
 
 
 
-### 5.2 Process
+### <a name="processes"></a>5.2 Processes
 
 **1. Tech Stack**
 
@@ -407,7 +416,7 @@ Python Dependencies Installed:
   - Decoding of JWT returned by Auth0
 - See requirements.txt in the folder for packages version information
 
-## 6. Dev Ops
+## <a name="dev-ops"></a>6. Dev Ops
 ### Deployment to remote machine(example using Heroku)
 
 **Prerequisites:**
@@ -422,7 +431,7 @@ Python Dependencies Installed:
 
 - Clone repository from [https://github.com/mechastriker3/SendIt.git](https://github.com/mechastriker3/SendIt.git)
 - Directory Structure (blue = folder, white = files):
-  - ![](RackMultipart20200726-4-6pxwre_html_bdd045760573e25d.png)
+  - ![Directory](https://github.com/mechastriker3/SendIt/blob/master/images/Directory.png)
 - To set up DB
   - Login to mongo atlas and create a cluster, inside the cluster create a database and inside the database create a collection called jobs
 - To deploy the **backend** API service:
@@ -430,17 +439,16 @@ Python Dependencies Installed:
   - cd into /backend directory
   - Run ```heroku login -i``` and login to your heroku account
   - Run ```heroku config:set DB_USERNAME=<your_db_username> DB_PASSWORD= <your_db_password> DB_NAME=<send_it CLUSTER\_URL=\&lt;your\_cluster\_url```
-  - Cluster url highlighted in the example below ![](RackMultipart20200726-4-6pxwre_html_2a4487eb79f728d6.png)
-  - Run heroku create \&lt;name\_of\_your\_backend\_API\&gt;
-  -
+  - Cluster url highlighted in the example below ![ConnectionString](https://github.com/mechastriker3/SendIt/blob/master/images/ConnectionString.png)
+  - Run heroku create <name_of_your_backend_API>
   - Run git push heroku master
 - To deploy the **frontend** UI:
   - cd into the /frontend directory
-  - Run heroku create \&lt;name\_of\_your\_app\&gt; --buildpack mars/create-react-app
+  - Run heroku create <name_of_your_app> --buildpack mars/create-react-app
   - Run git push heroku master
   - Your app is now deployed!!
 
-## 7. System testing:
+## <a name="system-testing"></a>7. System Testing:
 
 **Basic Testing in Development:**
 
@@ -448,11 +456,11 @@ We did basic system testing by using 2 different google accounts to test our app
 
 The sender schedules the job and the job shows up in the job listing page as well as the jobs posted page and splits according to its status(pending/ongoing/history). We also tested to make sure that a sender cannot accept his own job(instead a cancel job button will be shown as seen in the screenshot below)
 
-![](RackMultipart20200726-4-6pxwre_html_2c95aab6ace21b64.png)
+![Cancel Button](https://github.com/mechastriker3/SendIt/blob/master/images/CancelButton.png)
 
 As a deliverer, jobs viewed in the job listing page will have an accept job button in the job&#39;s expanded row as seen in the screenshot below:
 
-![](RackMultipart20200726-4-6pxwre_html_7cc95a9bb5fec15a.png)
+![Accept Button](https://github.com/mechastriker3/SendIt/blob/master/images/AcceptButton.png)
 
 Once a job has been accepted we tested to make sure the status is changed correctly and shows up on the deliverer&#39;s jobs accepted page as well as the sender&#39;s jobs posted page(ongoing jobs tab). One status change will update the table for both the sender and the deliverer accordingly.
 
@@ -466,7 +474,7 @@ However we encountered certain bugs in the mobile version.
 
 1. Options are not displaying as select options in the leave feedback rating input as well as the select parcel size select input.
 
-![](RackMultipart20200726-4-6pxwre_html_9d0f94acd1caff95.png)
+![MobileBug](https://github.com/mechastriker3/SendIt/blob/master/images/MobileSelectBug.png)
 
 This was rectified by correcting the option tag in these inputs.
 
@@ -474,8 +482,8 @@ This was rectified by correcting the option tag in these inputs.
 
 
 
-## Appendix A
-**Appendix A - Gmail API Integration:**
+## <a name="appendix"></a>Appendix
+### <a name="appendixA"></a>**Appendix A - Gmail API Integration:**
 
 1. Before integration you will need an API credentials file from Google. Follow step one from this link and click on enable Gmail API. This will result in you getting a credentials.json file from Google.
 2. Clear the folder backend/src/creds (relative to the root folder SendIt) and put the credentials.json file there.
