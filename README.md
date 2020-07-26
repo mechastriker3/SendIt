@@ -34,6 +34,8 @@ Normal delivery services usually require at least a few days to deliver your par
 
 We hope to make parcel delivery more efficient by providing a platform for commuters to help with deliveries.
 
+**Deployed Web Application**
+[https://sendit-orbital2020.herokuapp.com/](https://sendit-orbital2020.herokuapp.com/)
 
 ## <a name="setting-up"></a>2.1 Setting Up
 ### Setting up the project on local machine **(example using Mac OSX):**
@@ -301,7 +303,7 @@ b. Responsive Design
 
 Our application was styled with responsive react bootstrap components, hence our application is responsive and able to view on mobile devices.
 
-![Mobile Landing](https://github.com/mechastriker3/SendIt/blob/master/images/MobileLanding.png) ![Mobile Joblist](https://github.com/mechastriker3/SendIt/blob/master/images/MobileJobList.png) ![Mobile Schedule]() ![Mobile Accept](https://github.com/mechastriker3/SendIt/blob/master/images/MobileAccept.png)
+![Mobile Landing](https://github.com/mechastriker3/SendIt/blob/master/images/MobileLanding.png) ![Mobile Joblist](https://github.com/mechastriker3/SendIt/blob/master/images/MobileListing.png) ![Mobile Schedule](https://github.com/mechastriker3/SendIt/blob/master/images/MobileSchedule.png) ![Mobile Accept](https://github.com/mechastriker3/SendIt/blob/master/images/MobileAccept.png)
 
 #### <a name="future-features"></a>**Possible Future Implementations:**
 
@@ -474,7 +476,7 @@ However we encountered certain bugs in the mobile version.
 
 1. Options are not displaying as select options in the leave feedback rating input as well as the select parcel size select input.
 
-![MobileBug](https://github.com/mechastriker3/SendIt/blob/master/images/MobileSelectBug.png)
+![MobileBug](https://github.com/mechastriker3/SendIt/blob/master/images/MobileBug.png)
 
 This was rectified by correcting the option tag in these inputs.
 
