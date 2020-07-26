@@ -85,7 +85,7 @@ You should see a (myenv) at the front:
   - Run `python wsgi.py`
   - You should see something like this:
 
-![](RackMultipart20200726-4-6pxwre_html_212f6024ee712953.png)
+![Backend Run](https://github.com/mechastriker3/SendIt/blob/master/images/BackendRun.png)
 
 Now that the frontend and backend servers are running you may test the application out with your own google accounts.
 
@@ -301,7 +301,7 @@ b. Responsive Design
 
 Our application was styled with responsive react bootstrap components, hence our application is responsive and able to view on mobile devices.
 
-![Mobile Landing](https://github.com/mechastriker3/SendIt/blob/master/images/MobileLanding.png) ![Mobile Joblist](https://github.com/mechastriker3/SendIt/blob/master/images/MobileJobList.png) ![Mobile Schedule](https://github.com/mechastriker3/SendIt/blob/master/images/MobileSchedule.png) ![Mobile Accept](https://github.com/mechastriker3/SendIt/blob/master/images/MobileAccept.png)
+![Mobile Landing](https://github.com/mechastriker3/SendIt/blob/master/images/MobileLanding.png) ![Mobile Joblist](https://github.com/mechastriker3/SendIt/blob/master/images/MobileJobList.png) ![Mobile Schedule]() ![Mobile Accept](https://github.com/mechastriker3/SendIt/blob/master/images/MobileAccept.png)
 
 #### <a name="future-features"></a>**Possible Future Implementations:**
 
