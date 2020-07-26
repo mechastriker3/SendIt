@@ -15,6 +15,7 @@
     - [5.2. Processes](#processes)
 - [6. Dev Ops](#dev-ops)
 - [7. System Testing](#system-testing)
+- [8. Appendix](#appendix)
 
     
 ## <a name="introducton"></a>1. Introduction
