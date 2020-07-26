@@ -4,10 +4,10 @@
 2. [Setting Up](#setting-up)
 3. [User Stories](#user-stories)
 4. [Components](#components)
-    4.1 [Main Components](#main-components)
-    4.2 [Features](###4.2-Features)
-        4.2.1 [Milestone 2](####Features-implemented-in-Milestone-2)
-        4.2.2 
+    4.1. [Main Components](#main-components)
+    4.2. [Features](###4.2-Features)
+        4.2.1. [Milestone 2](####Features-implemented-in-Milestone-2)
+        4.2.2. 
     
 ## <a name="introducton"></a>1. Introduction
 **Proposed Level of Achievement:**
