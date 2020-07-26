@@ -60,8 +60,8 @@ We hope to make parcel delivery more efficient by providing a platform for commu
   `brew services start mongodb-community@4.2`
 - To start the **frontend** server:
   - cd into /frontend directory
-  - Run npm install (This will install the dependencies required for project to run)
-  - Run npm start
+  - Run `npm install` (This will install the dependencies required for project to run)
+  - Run `npm start`
   - Once you see that it has compiled successfully means the server is active
 
 ![Compiled](https://github.com/mechastriker3/SendIt/blob/master/images/Compiled.png)
@@ -71,18 +71,18 @@ Next, open a New terminal with the + button on the top right hand corner
 - To start the **backend** server:
   - cd into /backend directory
   - Set up virtual environment (so that pip packages will be contained in the environment)
-    - Run conda create -n myenv python **=** x.x anaconda(replace x.x with python version, in our case python 3.7)
-    - This will create a virtual environment named myenv. Run conda env list to check if the environment is created. You should see an environment myenv.
-    - Next we will activate the virtual environment by running conda activate myenv
+    - Run `conda create -n myenv python **=** x.x anaconda`(replace x.x with python version, in our case python 3.7)
+    - This will create a virtual environment named myenv. Run `conda env list` to check if the environment is created. You should see an environment myenv.
+    - Next we will activate the virtual environment by running `conda activate myenv`
 
-You should see a (env) at the front:
+You should see a (myenv) at the front:
 
 ![VirtualEnv](https://github.com/mechastriker3/SendIt/blob/master/images/CondaEnv.png)
 
 - After our virtual environment has been set up, we need to install our requirements for the backend.
-  - Run pip install -r requirements.txt
+  - Run `pip install -r requirements.txt`
 - To start the backend server:
-  - Run python wsgi.py
+  - Run `python wsgi.py`
   - You should see something like this:
 
 ![](RackMultipart20200726-4-6pxwre_html_212f6024ee712953.png)
