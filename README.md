@@ -129,7 +129,7 @@ Note: App runs on local database as this app is in development mode.
 | \* | User | Communicate with the other party | Keep in contact with the other party should there be any issues |
 | \* | Sender | Edit a delivery job&#39;s details if it has not been accepted | Change the details should there be any mistakes |
 
-_Note: all the low priority features (features that we deem non vital for normal use of the application), will be mentioned in the section [Future Extension]_ _(put a section link here in .md file__)_
+_Note: all the low priority features (features that we deem non vital for normal use of the application), will be mentioned in the section [Possible Future Implementations](#future-features)
 
 ## <a name="components"></a>4. Components
 ### <a name="main-components"></a>4.1 Main Components
