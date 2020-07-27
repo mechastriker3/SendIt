@@ -304,7 +304,7 @@ Accept Job Modal contact number validation:
 
 ![Accept Validation](https://github.com/mechastriker3/SendIt/blob/master/images/AcceptValidation.png)
 
-Schedule Job Contact number and postal code validation.
+Schedule Job Contact number and postal code validation:
 
 ![Form Validation](https://github.com/mechastriker3/SendIt/blob/master/images/ScheduleValidation.png)
 
