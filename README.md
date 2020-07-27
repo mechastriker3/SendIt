@@ -28,6 +28,8 @@ Artemis
 Link to our Web application:
 [https://sendit-orbital2020.herokuapp.com/](https://sendit-orbital2020.herokuapp.com/)
 
+Recommended to use with Google Chrome. Feel free to use the application on desktop or on a mobile phone.
+
 (Note: We are using a free plan for Heroku, it might take awhile for the Application to load at first. The application may be slow initially, please be patient.) 
 
 ![Poster](https://github.com/mechastriker3/SendIt/blob/master/images/Poster.png)
