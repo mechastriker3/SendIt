@@ -129,7 +129,7 @@ Note: App runs on local database as this app is in development mode.
 | \* | User | Communicate with the other party | Keep in contact with the other party should there be any issues |
 | \* | Sender | Edit a delivery job&#39;s details if it has not been accepted | Change the details should there be any mistakes |
 
-_Note: all the low priority features (features that we deem non vital for normal use of the application), will be mentioned in the section [Possible Future Implementations](#future-features)
+_Note: all the low priority features (features that we deem non vital for normal use of the application), will be mentioned in the section [4.2.4 Possible Future Implementations](#future-features)
 
 ## <a name="components"></a>4. Components
 ### <a name="main-components"></a>4.1 Main Components
@@ -169,7 +169,7 @@ User Information:
 
 A **Web-application** that supports three main features. The user will be able to view their information on the profile tab, including their jobs accepted, jobs posted. Secondly, the user will be able to view all the job listings and accept jobs that they want to take up. Lastly the user will be able to post jobs up for delivery.
 
-#### <a name="milestone2-features"></a>**Features implemented in Milestone 2**
+#### <a name="milestone2-features"></a>**4.2.1 Features implemented in Milestone 2**
 
 a. Login to account
 
@@ -252,7 +252,7 @@ d. Schedule a new job
   - Comments
 - Form validation (Required fields)
 
-#### <a name="milestone3-features"></a>**Features completed in Milestone 3**
+#### <a name="milestone3-features"></a>**4.2.2 Features completed in Milestone 3**
 
 a. Integrating A Feedback And Rating System For Users:
 
@@ -292,7 +292,7 @@ e. Additional Job details:
 
 ![Deliverer Details](https://github.com/mechastriker3/SendIt/blob/master/images/DelivererDetails.png)
 
-#### <a name="additional-features"></a>**Additional features implemented:**
+#### <a name="additional-features"></a>**4.2.3 Additional features implemented:**
 
 a. Form Validation
 
@@ -314,7 +314,7 @@ Our application was styled with responsive react bootstrap components, hence our
 
 ![Mobile Landing](https://github.com/mechastriker3/SendIt/blob/master/images/MobileLanding.png) ![Mobile Joblist](https://github.com/mechastriker3/SendIt/blob/master/images/MobileListing.png) ![Mobile Schedule](https://github.com/mechastriker3/SendIt/blob/master/images/MobileSchedule.png) ![Mobile Accept](https://github.com/mechastriker3/SendIt/blob/master/images/MobileAccept.png)
 
-#### <a name="future-features"></a>**Possible Future Implementations:**
+#### <a name="future-features"></a>**4.2.4 Possible Future Implementations:**
 
 1. Integrating Google Maps API for our Schedule Jobs form. This way users can just key in a keyword or the postal code and their address will be filled up
    - Implementation: [https://mamoonblog.wordpress.com/2012/01/17/get-address-by-postcodegoogle-geocoding-api/](https://mamoonblog.wordpress.com/2012/01/17/get-address-by-postcodegoogle-geocoding-api/)
