@@ -340,7 +340,7 @@ Our application was styled with responsive react bootstrap components, hence our
 
 Link to higher definition flowchart:
 
-[https://drive.google.com/file/d/105FR5FxnScB15wu7PLYDVwAzVQ5WjKyX/view?usp=sharing](https://drive.google.com/file/d/105FR5FxnScB15wu7PLYDVwAzVQ5WjKyX/view?usp=sharing)
+[https://drive.google.com/file/d/1v6KrYPSM49x-2FAVxOJwgHGjzS77iwF6/view?usp=sharing](https://drive.google.com/file/d/1v6KrYPSM49x-2FAVxOJwgHGjzS77iwF6/view?usp=sharing)
 
 
 
