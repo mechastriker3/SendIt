@@ -474,6 +474,12 @@ Once a job has been accepted we tested to make sure the status is changed correc
 
 We also tested to ensure that users are able to leave feedback for one another once the job is complete.
 
+**System Testing with Users**
+
+We did system testing with our advisor Nicholas as well as our mentor Samuel. During testing the features worked as intended, and we took their comments on our design and made some changes to the look and styling of our application. 
+
+We also did user testing with friends and family after we have deployed our app and surveyed their experience. Features work as intended and our users mentioned that our application is straightforward and easy to use.
+
 **System testing in Mobile**
 
 We tested to ensure that all components work properly in mobile and that all components are responsive.
