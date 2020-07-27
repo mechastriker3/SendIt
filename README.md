@@ -338,10 +338,6 @@ Our application was styled with responsive react bootstrap components, hence our
 
 ![UXDiagram](https://github.com/mechastriker3/SendIt/blob/master/images/UXDiagram.jpg)
 
-Link to higher definition flowchart:
-
-[https://drive.google.com/file/d/1v6KrYPSM49x-2FAVxOJwgHGjzS77iwF6/view?usp=sharing](https://drive.google.com/file/d/1v6KrYPSM49x-2FAVxOJwgHGjzS77iwF6/view?usp=sharing)
-
 
 
 ### <a name="processes"></a>5.2 Processes
