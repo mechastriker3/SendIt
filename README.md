@@ -485,7 +485,7 @@ However we encountered certain bugs in the mobile version.
 
 This was rectified by correcting the option tag in these inputs.
 
-1. Third party cookies bug in Safari. Users do not stay logged in when they are routed back to the dashboard. This causes users to be routed back to the landing page instead of the dashboard. Upon research Auth0 noted that this can happen when browsers like Safari block third party cookies.
+2. Third party cookies bug in Safari. Users do not stay logged in when they are routed back to the dashboard. This causes users to be routed back to the landing page instead of the dashboard. Upon research Auth0 noted that this can happen when browsers like Safari block third party cookies.
 
 
 
