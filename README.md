@@ -492,7 +492,9 @@ However we encountered certain bugs in the mobile version.
 
 This was rectified by correcting the option tag in these inputs.
 
-2. Third party cookies bug in Safari. Users do not stay logged in when they are routed back to the dashboard. This causes users to be routed back to the landing page instead of the dashboard. Upon research Auth0 noted that this can happen when browsers like Safari block third party cookies.
+2. Third party cookies bug in Safari. Users do not stay logged in when they are routed back to the dashboard (either through breadcrumbs or any link to the dashboard). This causes users to be routed back to the landing page instead of the dashboard. Upon research Auth0 noted that this can happen when browsers like Safari block third party cookies. Safari's ITP technology prevents the transmission of third-party tracking cookies, hence causing silent authentication to fail.
+
+This issue was not rectified. To work around this issue in Safari, we would require a custom domain which only available in Auth0's paid subscriptions. For more information refer to [https://github.com/auth0/auth0-spa-js/issues/324](https://github.com/auth0/auth0-spa-js/issues/324) and [https://community.auth0.com/t/failed-silent-auth-login-required/33165/24](https://community.auth0.com/t/failed-silent-auth-login-required/33165/24)
 
 
 
