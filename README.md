@@ -23,6 +23,13 @@
 
 Artemis
 
+**Deployed Web Application**
+
+Link to our Web application:
+[https://sendit-orbital2020.herokuapp.com/](https://sendit-orbital2020.herokuapp.com/)
+
+(Note: We are using a free plan for Heroku, it might take awhile for the Application to load at first. The application may be slow initially, please be patient.) 
+
 ![Poster](https://github.com/mechastriker3/SendIt/blob/master/images/Poster.png)
 
 **Motivation**
@@ -35,12 +42,6 @@ Normal delivery services usually require at least a few days to deliver your par
 
 We hope to make parcel delivery more efficient by providing a platform for commuters to help with deliveries.
 
-**Deployed Web Application**
-
-Link to our Web application:
-[https://sendit-orbital2020.herokuapp.com/](https://sendit-orbital2020.herokuapp.com/)
-
-(Note: We are using a free plan for Heroku, it might take awhile for the Application to load at first. The application may be slow initially, please be patient.) 
 
 ## <a name="setting-up"></a>2.1 Setting Up
 ### Setting up the project on local machine **(example using Mac OSX):**
