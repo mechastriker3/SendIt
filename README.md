@@ -1,4 +1,5 @@
-# Milestone 3 Submission
+# SendIt
+## WebApp Built for Orbital 2020
 
 - [1. Introduction](#introducton)
 - [2. Setting Up](#setting-up)
